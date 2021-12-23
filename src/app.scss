@@ -1,0 +1,104 @@
+@import '_core';
+
+:root {
+  --font-family-system: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
+}
+
+@media screen {
+  :root {
+    --font-system: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+      Helvetica, Arial, sans-serif;
+    --font-body: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    --primary-hue: 258;
+
+    --highlight-sat: 70%;
+    --highlight-lum: 66%;
+    --text-sat: 38%;
+    --text-lum: 72%;
+
+    --color-background: hsl(var(--primary-hue), 53%, 24%);
+    --color-text: hsl(var(--primary-hue), var(--text-sat), var(--text-lum));
+    --color-link: white;
+    --color-highlight: hsl(
+      var(--primary-hue),
+      var(--highlight-sat),
+      var(--highlight-lum)
+    );
+    --color-subdued: hsl(var(--primary-hue), 11%, 35%);
+    --color-subdued-text: hsl(var(--primary-hue), 11%, 45%);
+    --color-subdued-border: hsla(
+      var(--primary-hue),
+      var(--highlight-sat),
+      var(--highlight-lum),
+      0.6
+    );
+
+    @include desktop {
+      --color-subdued-text: hsla(
+        var(--primary-hue),
+        var(--highlight-sat),
+        var(--highlight-lum),
+        0.7
+      );
+      --horz-margin: 4vw;
+    }
+
+    @include mobile {
+      --color-subdued-text: hsl(
+        var(--primary-hue),
+        calc(var(--highlight-sat) - 5%),
+        var(--highlight-lum)
+      );
+      --horz-margin: 12px;
+    }
+  }
+
+  .print-only {
+    display: none;
+  }
+}
+
+@media print {
+  :root {
+    --color-background: transparent;
+    --color-text: black;
+    --color-link: black;
+    --color-highlight: var(--color-text);
+    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  .screen-only {
+    display: none;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+a {
+  color: var(--link-color);
+
+  @media print {
+    text-decoration: none;
+  }
+}
+
+// Apply primary font family, size and weight to form elements.
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}

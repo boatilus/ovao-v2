@@ -1,0 +1,25 @@
+$breakpoint: 812px;
+
+@mixin desktop {
+  @media (min-width: ($breakpoint + 1px)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: 320px) and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
