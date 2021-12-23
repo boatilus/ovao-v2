@@ -16,6 +16,22 @@
 
 <style lang="scss">
   article {
-    background: red;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1 {
+    color: var(--color-highlight);
+    font-size: 48px;
+    letter-spacing: -2.4px;
+    opacity: 0.75;
+  }
+
+  :global(code) {
+    font-size: 14px;
+  }
+
+  :global(p) {
+    text-indent: 0.6em;
   }
 </style>

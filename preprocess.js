@@ -1,9 +1,14 @@
 import { cwd } from 'process'
 import { XMLParser } from 'fast-xml-parser'
+import { readFileSync } from 'fs'
 import dedent from 'dedent'
 import MagicString from 'magic-string'
 import prettier from 'prettier'
 import shiki from 'shiki'
+
+const code_theme = JSON.parse(
+  readFileSync('./src/rose-pine-color-theme.json', 'utf-8')
+)
 
 // Escape curlies, backticks, \t, \r and \n to avoid breaking output of
 // {@html `here`} Svelte-like files.
@@ -16,13 +21,15 @@ const escapeSvelte = (str) =>
     )
     .replace(/\\([trn])/g, '&#92;$1')
 
-const parser = new XMLParser({
+const parse_opts = {
   alwaysCreateTextNode: true,
   allowBooleanAttributes: true,
   attributesGroupName: 'attr',
   attributeNamePrefix: '',
   ignoreAttributes: false
-})
+}
+
+const parser = new XMLParser(parse_opts)
 
 const tag_regex = new RegExp(/<CodeBlock[\s\S]*?>([\s\S]*?)<\/CodeBlock>/g)
 
@@ -74,7 +81,7 @@ const process = (opts) => {
           })
 
           // TODO: load custom theme
-          const highligher = await shiki.getHighlighter({ theme: 'nord' })
+          const highligher = await shiki.getHighlighter({ theme: code_theme })
 
           // If the element has a `lang` attribute, use its value as the
           // language for shiki.
@@ -85,12 +92,18 @@ const process = (opts) => {
           }
         }
 
+        let attrs = ''
+        for (const attr in parsed.CodeBlock?.attr) {
+          attrs += ` ${attr}="${parsed.CodeBlock.attr[attr]}"`
+        }
+
         // Re-insertion is simply the fully-escaped string.
         // TODO: re-insert originally-composed tag with attributes et al.
-        const wrapped = `<CodeBlock>{@html \`${escapeSvelte(
+        const wrapped = `<CodeBlock${attrs}>{@html \`${escapeSvelte(
           slot_contents
         )}\`}</CodeBlock>`
 
+        // Re-insertion is simply the fully-escaped string.
         code.overwrite(start_index, end_index, wrapped)
       }
 

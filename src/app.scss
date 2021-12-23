@@ -1,10 +1,5 @@
 @import '_core';
 
-:root {
-  --font-family-system: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-    Helvetica, Arial, sans-serif;
-}
-
 @media screen {
   :root {
     --font-system: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
@@ -21,19 +16,25 @@
     --color-background: hsl(var(--primary-hue), 53%, 24%);
     --color-text: hsl(var(--primary-hue), var(--text-sat), var(--text-lum));
     --color-link: white;
+
     --color-highlight: hsl(
       var(--primary-hue),
       var(--highlight-sat),
       var(--highlight-lum)
     );
+
     --color-subdued: hsl(var(--primary-hue), 11%, 35%);
     --color-subdued-text: hsl(var(--primary-hue), 11%, 45%);
+
     --color-subdued-border: hsla(
       var(--primary-hue),
       var(--highlight-sat),
       var(--highlight-lum),
       0.6
     );
+
+    --color-background-dark: hsl(var(--primary-hue), 31%, 11%);
+    --color-background-code: hsl(var(--primary-hue), 44%, 20%);
 
     @include desktop {
       --color-subdued-text: hsla(
@@ -81,18 +82,23 @@ body {
 
 body {
   margin: 0;
-  background: var(--background-color);
-  color: var(--text-color);
+  background: var(--color-background);
+  color: var(--color-text);
   font-family: var(--font-body);
   font-weight: 400;
 }
 
 a {
-  color: var(--link-color);
+  color: var(--color-link);
 
   @media print {
     text-decoration: none;
   }
+}
+
+h1,
+h2 {
+  -webkit-font-smoothing: antialiased;
 }
 
 // Apply primary font family, size and weight to form elements.
