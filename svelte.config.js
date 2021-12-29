@@ -16,6 +16,8 @@ const config = {
   ]),
   kit: {
     adapter: adapter({
+      pages: '.output',
+      assets: '.output',
       precompress: true // FIXME: not working?
     }),
     target: 'body'
