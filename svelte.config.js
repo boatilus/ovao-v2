@@ -1,7 +1,7 @@
 import { mdsvex } from 'mdsvex'
 import mdsvexConfig from './mdsvex.config.js'
 import adapter from '@sveltejs/adapter-static'
-import reactiveCSSPreprocessor from 'svelte-reactive-css-preprocess'
+//import reactiveCSSPreprocessor from 'svelte-reactive-css-preprocess'
 import sequential from 'svelte-sequential-preprocessor'
 import preprocess from 'svelte-preprocess'
 import proc from './preprocess.js'
@@ -16,9 +16,9 @@ const config = {
   ]),
   kit: {
     adapter: adapter({
-      precompress: true
+      precompress: true // FIXME: not working?
     }),
-    target: '#svelte'
+    target: 'body'
   }
 }
 

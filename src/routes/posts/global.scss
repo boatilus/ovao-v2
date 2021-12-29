@@ -1,0 +1,35 @@
+@import './src/_core';
+
+body {
+  background: hsl(var(--primary-hue), 43%, 15%);
+
+  @include desktop {
+    margin: 0 4vw;
+  }
+}
+
+p {
+  line-height: calc(18px * var(--line-height-ratio));
+  text-indent: 0.6em;
+
+  code {
+    font-size: var(--font-size-mono);
+  }
+
+  @include mobile {
+    padding: 0 10px;
+  }
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+  font-size: var(--font-size-mono);
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-highlight);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  text-decoration-skip-ink: all;
+}

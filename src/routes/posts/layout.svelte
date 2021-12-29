@@ -47,16 +47,4 @@
       padding: 0 10px;
     }
   }
-
-  :global(p) {
-    text-indent: 0.6em;
-  }
-
-  :global(code) {
-    font-size: var(--font-size-mono);
-  }
-
-  :global(p code) {
-    font-size: var(--font-size-mono);
-  }
 </style>
