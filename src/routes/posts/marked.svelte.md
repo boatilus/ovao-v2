@@ -1,5 +1,6 @@
 ---
 title: Be Wary of :global Styling in SvelteKit
+date: 2021-12-29
 ---
 
 <script>
@@ -18,7 +19,7 @@ In SvelteKit, however, with its ability to [prefetch routes](https://kit.svelte.
       const { slug } = params
       const post = await readFile(`./static/_posts/$\{slug\}.md`, 'utf8')
 
-      // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     }
 
   </CodeBlock>
