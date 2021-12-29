@@ -69,16 +69,15 @@ const process = (opts) => {
         const end_index = start_index + length
 
         const parsed = parser.parse(match[0])
-        //console.log(parsed)
-
         let slot_contents = dedent(parsed.CodeBlock['#text'])
-        //console.log(slot_contents)
 
         if (opts.format) {
-          slot_contents = prettier.format(slot_contents, {
-            parser: 'babel',
-            ...prettier_opts
-          })
+          slot_contents = prettier
+            .format(slot_contents, {
+              parser: 'babel',
+              ...prettier_opts
+            })
+            .trim() // wipe out the trailing newline
 
           // TODO: load custom theme
           const highligher = await shiki.getHighlighter({ theme: code_theme })

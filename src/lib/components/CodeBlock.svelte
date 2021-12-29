@@ -3,12 +3,48 @@
     TS = 'ts',
     Svelte = 'svelte'
   }
+
+  const COPY_BUTTON_LABEL = 'Copy snippet to clipboard'
 </script>
 
 <script lang="ts">
+  import { onMount } from 'svelte'
+
   export let lang: Lang
   export let filename: string
   export let disable_copy = false
+
+  let slot: HTMLElement
+  let copy_button: HTMLButtonElement
+
+  const copyButtonTransitionEnd = () => {
+    const label = copy_button.attributes.getNamedItem('aria-label')
+    label.textContent = COPY_BUTTON_LABEL
+  }
+
+  const onCopyMouseOut = () => {
+    copy_button.addEventListener('transitionend', copyButtonTransitionEnd)
+  }
+
+  const onCopyClick = async () => {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(slot.textContent)
+
+      const label = copy_button.attributes.getNamedItem('aria-label')
+      label.textContent = 'Copied!'
+    }
+  }
+
+  onMount(() => {
+    return () => {
+      if (copy_button) {
+        copy_button.removeEventListener(
+          'transitionend',
+          copyButtonTransitionEnd
+        )
+      }
+    }
+  })
 </script>
 
 <figure>
@@ -17,7 +53,9 @@
   {/if}
   <!-- shiki will automatically wrap code in pre/code elements -->
   <div>
-    <slot />
+    <div bind:this={slot}>
+      <slot />
+    </div>
     <aside>
       {#if lang === 'ts'}
         <svg
@@ -35,30 +73,52 @@
         </svg>
       {/if}
       {#if !disable_copy}
-        <svg
-          width="19px"
-          height="16px"
-          viewBox="0 0 19 16"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
+        <button
+          bind:this={copy_button}
+          on:click={onCopyClick}
+          on:mouseleave={onCopyMouseOut}
+          aria-label={COPY_BUTTON_LABEL}
+          data-microtip-position="left"
+          role="tooltip"
         >
-          <path
-            d="M16.4474453,-1.11411193 L4.78077859,-1.11411193 C4.41411193,-1.11411193 4.11411193,-0.772910209 4.11411193,-0.355885888 L4.11411193,12.9130698 C4.11411193,13.3300941 4.41411193,13.6333845 4.74744526,13.6333845 L16.4474453,13.6333845 C16.8141119,13.6333845 17.0807786,13.2921828 17.0807786,12.9130698 L17.0807786,-0.355885888 C17.1141119,-0.772910209 16.8141119,-1.11411193 16.4474453,-1.11411193 Z M15.8141119,12.192755 L5.41411193,12.192755 L5.41411193,0.364428847 L15.8141119,0.364428847 L15.8141119,12.192755 Z M13.4474453,17.083313 L1.78077859,17.083313 C1.41411193,17.083313 1.11411193,16.7421113 1.11411193,16.3250869 L1.11411193,3.05613128 C1.11411193,2.63910696 1.41411193,2.33581654 1.74744526,2.33581654 C2.08077859,2.33581654 2.38077859,2.67701826 2.38077859,3.05613128 L2.38077859,15.6047722 L13.4474453,15.6047722 C13.8141119,15.6047722 14.0807786,15.9459739 14.0807786,16.3250869 C14.1141119,16.7421113 13.8141119,17.083313 13.4474453,17.083313 Z"
-            transform="translate(9.098712, 7.984601) rotate(-270.000000) translate(-9.098712, -7.984601) "
-          />
-        </svg>
+          <svg
+            width="19px"
+            height="16px"
+            viewBox="0 0 19 16"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <path
+              d="M16.4474453,-1.11411193 L4.78077859,-1.11411193 C4.41411193,-1.11411193 4.11411193,-0.772910209 4.11411193,-0.355885888 L4.11411193,12.9130698 C4.11411193,13.3300941 4.41411193,13.6333845 4.74744526,13.6333845 L16.4474453,13.6333845 C16.8141119,13.6333845 17.0807786,13.2921828 17.0807786,12.9130698 L17.0807786,-0.355885888 C17.1141119,-0.772910209 16.8141119,-1.11411193 16.4474453,-1.11411193 Z M15.8141119,12.192755 L5.41411193,12.192755 L5.41411193,0.364428847 L15.8141119,0.364428847 L15.8141119,12.192755 Z M13.4474453,17.083313 L1.78077859,17.083313 C1.41411193,17.083313 1.11411193,16.7421113 1.11411193,16.3250869 L1.11411193,3.05613128 C1.11411193,2.63910696 1.41411193,2.33581654 1.74744526,2.33581654 C2.08077859,2.33581654 2.38077859,2.67701826 2.38077859,3.05613128 L2.38077859,15.6047722 L13.4474453,15.6047722 C13.8141119,15.6047722 14.0807786,15.9459739 14.0807786,16.3250869 C14.1141119,16.7421113 13.8141119,17.083313 13.4474453,17.083313 Z"
+              transform="translate(9.098712, 7.984601) rotate(-270.000000) translate(-9.098712, -7.984601) "
+            />
+          </svg>
+        </button>
       {/if}
     </aside>
   </div>
 </figure>
 
 <style lang="scss">
+  @import './src/_core';
+
   figure {
     --horz-padding: 15px;
 
     background: var(--color-background-code);
+    border-radius: var(--border-radius-standard);
     margin: 1.5em 0;
+    min-height: 60px;
+    overflow: hidden;
+
+    &:hover button {
+      opacity: 1;
+    }
+
+    @include mobile {
+      overflow: scroll;
+    }
   }
 
   figcaption {
@@ -88,10 +148,61 @@
     path {
       fill: var(--color-highlight);
     }
+
+    button {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      opacity: 0.4;
+      transition: 400ms opacity;
+
+      @include mobile {
+        display: none;
+      }
+    }
   }
 
   :global(pre) {
     margin: 0;
-    padding: calc(var(--horz-padding) / 1.5) var(--horz-padding);
+
+    @include desktop {
+      padding: calc(var(--horz-padding) / 1.5) var(--horz-padding);
+    }
+
+    @include mobile {
+      padding: 10px;
+    }
+  }
+
+  :global(pre > code) {
+    display: inline-block;
+    transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateX(-2rem);
+  }
+
+  :global(pre > code span.line) {
+    counter-increment: line;
+  }
+
+  :global(pre > code .line::before) {
+    content: counter(line);
+    display: inline-block;
+    // padding: 0 0.5em;
+    // margin-right: 1em;
+    color: var(--color-subdued);
+    opacity: 0;
+    cursor: default;
+    transition: opacity 250ms;
+    transition-delay: 75ms;
+    width: 2rem;
+  }
+
+  :global(figure:hover code) {
+    transform: translateX(0);
+  }
+
+  :global(figure:hover .line::before) {
+    opacity: 1;
   }
 </style>
