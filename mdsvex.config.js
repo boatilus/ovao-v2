@@ -12,13 +12,23 @@ const checkLinks = async (url, node) => {
   if (
     process.env['ENVIRONMENT'] === 'production' ||
     process.env['VERCEL_ENV'] === 'production'
-  )
-    if (node.tagName === 'a' && !url.href.startsWith('/')) {
-      const { status } = await fetch(url.href)
+  ) {
+    const { href } = url
+
+    if (
+      node.tagName === 'a' &&
+      !href.startsWith('#') &&
+      !href.startsWith('/')
+    ) {
+      const { status } = await fetch(href)
+      if (status === 200) {
+        console.log(`link (${href}) okay`)
+      }
       if (status === 404) {
-        console.error(`link (${url}) returned 404`)
+        console.error(`link (${href}) returned 404`)
       }
     }
+  }
 }
 
 /** @type {import('mdsvex').MdsvexOptions} */
