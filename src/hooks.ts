@@ -1,5 +1,6 @@
 import type { Handle } from '@sveltejs/kit'
 import { minify } from 'html-minifier' //Imports the module
+import { prerendering } from '$app/env'
 
 // TODO: modify these?
 const minification_options = {
@@ -25,7 +26,8 @@ const minification_options = {
 export const handle: Handle = async ({ request, resolve }) => {
   const response = await resolve(request)
 
-  if (response.headers['content-type'] === 'text/html') {
+  if (prerendering && response.headers['content-type'] === 'text/html') {
+    console.log(`mininfying prerendered request at ${request.path}..`)
     response.body = minify(response.body.toString(), minification_options)
   }
 

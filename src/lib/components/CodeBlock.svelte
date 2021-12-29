@@ -109,7 +109,7 @@
     background: var(--color-background-code);
     border-radius: var(--border-radius-standard);
     margin: 1.5em 0;
-    min-height: 60px;
+    min-height: 80px;
     overflow: hidden;
 
     &:hover button {

@@ -1,5 +1,5 @@
 import { mdsvex } from 'mdsvex'
-import mdsvexConfig from './mdsvex.config.js'
+import mdsvex_config from './mdsvex.config.js'
 import adapter from '@sveltejs/adapter-static'
 //import reactiveCSSPreprocessor from 'svelte-reactive-css-preprocess'
 import sequential from 'svelte-sequential-preprocessor'
@@ -8,16 +8,16 @@ import proc from './preprocess.js'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', ...mdsvexConfig.extensions],
+  extensions: ['.svelte', ...mdsvex_config.extensions],
   preprocess: sequential([
     proc({ format: true }),
     preprocess(),
-    mdsvex(mdsvexConfig)
+    mdsvex(mdsvex_config)
   ]),
   kit: {
     adapter: adapter({
-      pages: '.output/server/pages',
-      assets: '.output/static',
+      pages: '.output',
+      assets: '.output',
       precompress: true // FIXME: not working?
     }),
     target: 'body'
