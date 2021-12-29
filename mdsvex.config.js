@@ -5,7 +5,7 @@ import urls from 'rehype-urls'
  * Checks for any broken links. For now, just logs an error if a URL returns
  * 404.
  *
- * @param {string} url - The `href` attribute of the anchor.
+ * @param {import('url').URL} url - The `href` attribute of the anchor.
  * @param {Node} node - The anchor node.
  */
 const checkLinks = async (url, node) => {
@@ -14,7 +14,7 @@ const checkLinks = async (url, node) => {
     process.env['VERCEL_ENV'] === 'production'
   )
     if (node.tagName === 'a' && !url.href.startsWith('/')) {
-      const { status } = await fetch(url)
+      const { status } = await fetch(url.href)
       if (status === 404) {
         console.error(`link (${url}) returned 404`)
       }
