@@ -34,6 +34,7 @@
 
   h1 {
     color: var(--color-highlight);
+    cursor: default;
     letter-spacing: -2.4px;
     margin: 0 0 0.5em 0;
     opacity: 0.75;

@@ -42,6 +42,9 @@ const checkLinks = (url, node) => {
 const config = {
   extensions: ['.svelte.md'],
   smartypants: {
+    quotes: true,
+    ellipses: true,
+    backticks: false,
     dashes: 'oldschool'
   },
   layout: {

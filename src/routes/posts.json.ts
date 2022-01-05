@@ -24,6 +24,7 @@ export const get: RequestHandler = async () => {
 
   const posts = await Promise.all(
     entries
+      // We only care about files that end in .md (or .svelte.md).
       .filter((entry) => entry.isFile() && entry.name.endsWith('.md'))
       .map(async ({ name }) => {
         try {
