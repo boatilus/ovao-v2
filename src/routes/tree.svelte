@@ -20,8 +20,9 @@
   } from '$lib/variables'
 
   import themes from '../themes.json'
+  import { titler } from '$lib/util'
 
-  theme.set(themes['/tree*'])
+  theme.set(themes['/tree'])
 
   let domain: string
   let header: HTMLElement
@@ -74,6 +75,8 @@
       }
     </style>
   </noscript>
+
+  <title>{titler('Link Tree')}</title>
 </svelte:head>
 
 <main>
@@ -87,6 +90,9 @@
   </header>
 
   <ul bind:this={list}>
+    <li>
+      <a href="/" sveltekit:prefetch>Website</a>
+    </li>
     {#if domain !== 'github'}
       <li>
         <a href={GITHUB_URL} rel="external">
@@ -186,9 +192,9 @@
         </a>
       </li>
     {/if}
-    <!-- <li>
-      <a href="/resume">Resume</a>
-    </li> -->
+    <li>
+      <a href="/resume" sveltekit:prefetch>Resume</a>
+    </li>
   </ul>
 </main>
 

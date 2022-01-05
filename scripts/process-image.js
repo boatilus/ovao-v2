@@ -1,9 +1,29 @@
-import { access, readFile, writeFile } from 'fs/promises'
+/**
+ * Converts the input image to 1x, 2x and 3x WebP and JPEGs and outputs to
+ * the folder specified by the `out` argument
+ * (defaults to /static/imagess/works).
+ *
+ * The output filename is {basename}+{SHA-1 hash}{?Nx}.{extension}.
+ */
+import { readFile, writeFile } from 'fs/promises'
 import path from 'path'
+import commandLineArgs from 'command-line-args'
 import sharp from 'sharp'
 
 const THUMBNAIL_SIZE = 40
 const BASE_HEIGHT = 385
+
+const { createHash } = await import('crypto')
+
+const arg_option_defs = [
+  { name: 'src', type: String, defaultOption: true },
+  { name: 'dry', type: Boolean, defaultValue: false },
+  {
+    name: 'out',
+    type: String,
+    defaultValue: path.join(process.cwd(), 'static', 'images', 'works')
+  }
+]
 
 const opts = [
   { format: 'png', height: THUMBNAIL_SIZE, suffix: '-thumbnail' },
@@ -15,14 +35,14 @@ const opts = [
   { format: 'webp', height: BASE_HEIGHT * 3, suffix: '@3x', quality: 80 }
 ]
 
-const args = process.argv
+const { src, dry } = commandLineArgs(arg_option_defs)
 
-if (args.length < 3) {
-  console.error('no filename specified')
+if (!src || src.length === 0) {
+  console.error('no input file specified')
   process.exit(1)
 }
 
-const filename = args[2]
+const filename = src
 const ext = path.extname(filename)
 const basename = path.basename(filename, ext)
 const outdir = path.join(process.cwd(), 'static', 'images', 'works')
@@ -36,41 +56,37 @@ try {
   console.log(`${basename} image dimensions: ${width}x${height}`)
 
   for (const opt of opts) {
-    const out_filename = `${basename}${opt?.suffix || ''}.${opt.format}`
+    const hasher = createHash('sha1')
+    const img = image.clone()
+
+    if (height < opt.height) {
+      console.log(
+        `skipping ${out_filename}: target of ${opt.height}px less than original`
+      )
+      continue
+    }
+
+    if (opt?.blur) {
+      img.blur(opt.blur)
+    }
+
+    const buf = await img
+      .resize({ height: opt.height })
+      .toFormat(opt.format, { quality: opt.quality || 100 })
+      .toBuffer()
+
+    const hash = hasher.update(buf).digest('hex')
+    const out_filename = `${basename}+${hash}${opt?.suffix || ''}.${opt.format}`
     const outpath = path.join(outdir, out_filename)
+    const size_string = `${+(buf.length / 1024).toFixed(2)}kb`
 
-    // Check if the outfile exists. If so, skip it.
-    try {
-      await access(outpath)
-      console.log(`skipping ${out_filename}: already exists`)
-    } catch (err) {
-      if (err?.code !== 'ENOENT') {
-        console.error(err)
-        process.exit(1)
-      }
-
-      const img = image.clone()
-
-      if (height < opt.height) {
-        console.log(
-          `skipping ${out_filename}: target of ${opt.height}px less than original`
-        )
-        continue
-      }
-
-      if (opt?.blur) {
-        img.blur(opt.blur)
-      }
-
-      const buf = await img
-        .resize({ height: opt.height })
-        .toFormat(opt.format, { quality: opt.quality || 100 })
-        .toBuffer()
-
+    if (!dry) {
       await writeFile(outpath, buf)
 
+      console.log(`wrote ${out_filename}: size ${size_string}`)
+    } else {
       console.log(
-        `wrote ${out_filename}: size ${+(buf.length / 1024).toFixed(2)}kb`
+        `dry-processed ${out_filename} successfully: size ${size_string}`
       )
     }
   }
