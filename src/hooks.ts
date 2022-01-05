@@ -1,4 +1,4 @@
-import type { Theme } from '$lib/util/theme'
+import type { Theme } from '$lib/stores/theme'
 import type { Handle } from '@sveltejs/kit'
 import * as cheerio from 'cheerio'
 import UrlPattern from 'url-pattern'
@@ -60,7 +60,7 @@ export const handle: Handle = async ({ request, resolve }) => {
   }
 
   if (!theme) {
-    // No theme available; simply return the response
+    // No theme available; simply return the response.
     return response
   }
 
@@ -68,8 +68,8 @@ export const handle: Handle = async ({ request, resolve }) => {
 
   $('head').append(`<style>
     :root {
-      --background-color: ${theme.background};
-      --text-color: ${theme.text};
+      --color-background: ${theme.background};
+      --color-text: ${theme.text};
     }
   </style>`)
 
