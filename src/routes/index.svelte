@@ -5,10 +5,11 @@
 <script lang="ts">
   import { Easings } from '$lib/util/anime'
   import { started } from '$lib/stores/core'
-  import { onMount } from 'svelte'
   import anime from 'animejs'
-  import themes from '../themes.json'
+  import { onMount } from 'svelte'
   import { theme } from '$lib/stores/theme'
+
+  import themes from '../themes.json'
 
   import Link from '$lib/components/Link.svelte'
 
