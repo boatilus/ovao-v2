@@ -27,7 +27,7 @@ export const handle: Handle = async ({ request, resolve }) => {
   const response = await resolve(request)
 
   if (prerendering && response.headers['content-type'] === 'text/html') {
-    console.log(`mininfying prerendered request at ${request.path}..`)
+    console.log(`mininfying prerendered request at ${request.url.pathname}..`)
     response.body = minify(response.body.toString(), minification_options)
   }
 
