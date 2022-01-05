@@ -8,6 +8,7 @@
   import anime from 'animejs'
   import { onMount } from 'svelte'
   import { theme } from '$lib/stores/theme'
+  import { TITLE } from '$lib/variables'
 
   import themes from '../themes.json'
 
@@ -20,7 +21,11 @@
   theme.set(themes['/'])
 
   onMount(() => {
-    if (!$started) {
+    if ($started) {
+      h1_element.style.opacity = '1'
+      h2_element.style.opacity = '1'
+      summary_element.style.opacity = '1'
+    } else {
       const h1_gradient = h1_element.querySelectorAll('rect')
       const h2_gradient = h2_element.querySelectorAll('rect')
 
@@ -51,7 +56,20 @@
 </script>
 
 <svelte:head>
-  <title>ovao</title>
+  <title>{TITLE}</title>
+
+  <noscript>
+    <style>
+      #h1,
+      #h2 {
+        opacity: 0 !important;
+      }
+
+      #index--summary {
+        opacity: 1 !important;
+      }
+    </style>
+  </noscript>
 </svelte:head>
 
 <div id="index--container">
@@ -198,6 +216,8 @@
 
     #h1,
     #h2 {
+      opacity: 0;
+
       rect {
         opacity: 0;
       }
@@ -248,6 +268,10 @@
           width: 45vw;
         }
       }
+    }
+
+    #index--summary {
+      opacity: 0;
     }
 
     p {
