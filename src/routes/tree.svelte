@@ -36,7 +36,6 @@
 
       if (matched?.domain) {
         domain = matched.domain
-        console.log(domain)
       }
     }
 
