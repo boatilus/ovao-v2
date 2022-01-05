@@ -1,0 +1,27 @@
+{
+  "/": {
+    "background": "hsl(258,53%,24%)",
+    "text": "hsl(258,38%,72%)",
+    "links": "hsl(0,0%,100%)"
+  },
+  "/posts*": {
+    "background": "hsl(0,0%,0%)",
+    "text": "hsl(0,0%,80%)",
+    "links": "hsl(43,80%,57%)"
+  },
+  "/tree": {
+    "background": "hsl(258,53%,24%)",
+    "text": "hsl(258,38%,72%)",
+    "links": "hsl(258, 70%, 66%)"
+  },
+  "/resume*": {
+    "background": "hsl(258,17%,12%)",
+    "text": "hsl(258,27%,80%)",
+    "links": "hsl(0,0%,100%)"
+  },
+  "/works*": {
+    "background": "hsl(0,0%,0%)",
+    "text": "hsl(0,0%,80%)",
+    "links": "hsl(43,80%,57%)"
+  }
+}
