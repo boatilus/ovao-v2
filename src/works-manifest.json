@@ -1,0 +1,155 @@
+[
+  {
+    "name": "clip",
+    "aspect_ratio": 1,
+    "dominant_color": "rgb(104, 104, 104)",
+    "base": {
+      "width": 385,
+      "height": 385
+    },
+    "@2x": {
+      "width": 770,
+      "height": 770
+    },
+    "@3x": {
+      "width": 1155,
+      "height": 1155
+    }
+  },
+  {
+    "name": "714",
+    "aspect_ratio": 1,
+    "dominant_color": "rgb(248, 72, 72)",
+    "base": {
+      "width": 385,
+      "height": 385
+    },
+    "@2x": {
+      "width": 770,
+      "height": 770
+    },
+    "@3x": {
+      "width": 1155,
+      "height": 1155
+    }
+  },
+  {
+    "name": "9141",
+    "aspect_ratio": 1.7584415584415585,
+    "dominant_color": "rgb(248, 248, 248)",
+    "base": {
+      "width": 677,
+      "height": 385
+    },
+    "@2x": {
+      "width": 1353,
+      "height": 770
+    },
+    "@3x": {
+      "width": 2030,
+      "height": 1155
+    }
+  },
+  {
+    "name": "531v2-processed",
+    "aspect_ratio": 1.4883116883116883,
+    "dominant_color": "rgb(8, 120, 136)",
+    "base": {
+      "width": 573,
+      "height": 385
+    },
+    "@2x": {
+      "width": 1146,
+      "height": 770
+    },
+    "@3x": {
+      "width": 1719,
+      "height": 1155
+    }
+  },
+  {
+    "name": "404",
+    "aspect_ratio": 1,
+    "dominant_color": "rgb(216, 248, 248)",
+    "base": {
+      "width": 385,
+      "height": 385
+    },
+    "@2x": {
+      "width": 770,
+      "height": 770
+    },
+    "@3x": {
+      "width": 1155,
+      "height": 1155
+    }
+  },
+  {
+    "name": "514-A",
+    "aspect_ratio": 1.5324675324675325,
+    "dominant_color": "rgb(216, 136, 136)",
+    "base": {
+      "width": 590,
+      "height": 385
+    },
+    "@2x": {
+      "width": 1181,
+      "height": 770
+    },
+    "@3x": {
+      "width": 1772,
+      "height": 1155
+    }
+  },
+  {
+    "name": "514-C",
+    "aspect_ratio": 1.5324675324675325,
+    "dominant_color": "rgb(8, 8, 8)",
+    "base": {
+      "width": 590,
+      "height": 385
+    },
+    "@2x": {
+      "width": 1181,
+      "height": 770
+    },
+    "@3x": {
+      "width": 1772,
+      "height": 1155
+    }
+  },
+  {
+    "name": "dsfg-comp",
+    "aspect_ratio": 0.7714285714285715,
+    "dominant_color": "rgb(184, 248, 40)",
+    "base": {
+      "width": 297,
+      "height": 385
+    },
+    "@2x": {
+      "width": 594,
+      "height": 770
+    },
+    "@3x": {
+      "width": 891,
+      "height": 1155
+    }
+  },
+  {
+    "name": "408-noiseless",
+    "aspect_ratio": 1,
+    "dominant_color": "rgb(88, 200, 232)",
+    "base": {
+      "width": 385,
+      "height": 385
+    },
+    "@2x": {
+      "width": 770,
+      "height": 770
+    },
+    "@3x": {
+      "width": 1155,
+      "height": 1155
+    }
+  }
+]

@@ -1,4 +1,6 @@
 <script>
+  import './global.scss'
+
   export let title
 </script>
 
@@ -6,6 +8,10 @@
   {#if title}
     <title>{title}</title>
   {/if}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+    rel="stylesheet"
+  />
   <meta property="og:title" content={title} />
 </svelte:head>
 
@@ -21,11 +27,17 @@
     @include desktop {
       --font-size: 18px;
       --font-size-mono: 15px;
+
+      padding: 3.5em 0;
+      width: 60em;
     }
 
     @include mobile {
       --font-size: 16px;
       --font-size-mono: 14px;
+
+      padding: 0.5em 0 1em;
+      width: 100%;
     }
 
     font-size: var(--font-size);

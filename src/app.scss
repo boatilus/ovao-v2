@@ -103,6 +103,8 @@ a {
 
 h1,
 h2 {
+  cursor: default;
+  text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -112,6 +114,10 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 /* -------------------------------------------------------------------
