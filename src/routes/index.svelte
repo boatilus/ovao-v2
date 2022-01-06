@@ -185,7 +185,7 @@
         rel="external"
         href="https://github.com/boatilus">GitHub</Link
       >, and I blog <Link href="/posts">occasionally</Link>.-->I
-      also dabble in <Link href="/works" prefetch>the digital arts</Link>.
+      also dabble in <Link href="/works" prefetch>digital art</Link>.
     </p>
     <p>You can reach me <Link href="mailto:ron@ovao.dev">here</Link>.</p>
   </div>
