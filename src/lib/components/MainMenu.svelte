@@ -29,6 +29,7 @@
   let open = false
   let animating = false
 
+  let container: HTMLElement
   let button: HTMLButtonElement
   let overlay: HTMLDivElement
   let gradient: HTMLDivElement
@@ -57,6 +58,12 @@
       hotkeys.unbind('esc')
     }
   })
+
+  const onWindowClick = ({ target }) => {
+    if (open && !animating && !container.contains(target)) {
+      close()
+    }
+  }
 
   const close = async () => {
     if (!open) {
@@ -209,7 +216,7 @@
   }
 </script>
 
-<svelte:window on:sveltekit:navigation-end={close} />
+<svelte:window on:sveltekit:navigation-end={close} on:click={onWindowClick} />
 
 <div bind:this={overlay} id="mainmenu--overlay" />
 <div
@@ -217,7 +224,11 @@
   id="mainmenu--gradient"
   style="--transparent: {transparent}"
 />
-<div id="mainmenu--container" class:hidden={$page.url.pathname === '/tree'}>
+<div
+  bind:this={container}
+  id="mainmenu--container"
+  class:hidden={$page.url.pathname === '/tree'}
+>
   <button bind:this={button} id="mainmenu--toggle" on:click={toggle}
     >{open ? 'Close' : 'Menu'}
 
@@ -390,7 +401,6 @@
     }
 
     button {
-      //background: rgba(orange, 0.3) !important;
       align-items: center;
       background: transparent;
       border: 0;
@@ -426,9 +436,10 @@
     display: none;
     flex-direction: column;
     justify-content: flex-end;
+    padding-top: 33px;
     position: absolute;
     gap: 25px;
-    top: 70px;
+    top: 42px;
     right: 0;
     text-align: right;
 
