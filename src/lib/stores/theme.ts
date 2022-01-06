@@ -73,19 +73,14 @@ export const createSubscriber = (
     const root = document.documentElement
 
     if (background && background !== previous_theme.background) {
-      console.log(
-        `updating background from ${previous_theme.background} to ${background}`
-      )
       root.style.setProperty('--color-background', background, 'important')
       previous_theme.background = background
     }
     if (text && text !== previous_theme.text) {
-      console.log(`updating text from ${previous_theme.text} to ${text}`)
       root.style.setProperty('--color-text', text, 'important')
       previous_theme.text = text
     }
     if (links && links !== previous_theme.links) {
-      console.log(`updating links from ${previous_theme.links} to ${links}`)
       root.style.setProperty('--color-link', links, 'important')
       previous_theme.links = links
     }
