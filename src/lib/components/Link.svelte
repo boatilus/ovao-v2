@@ -39,12 +39,12 @@
   a {
     text-decoration: none;
     white-space: nowrap;
-    text-shadow: -3px -3px var(--background-color),
-      -3px 3px var(--background-color), 3px -3px var(--background-color),
-      3px 3px var(--background-color);
+    text-shadow: -3px -3px var(--color-background),
+      -3px 3px var(--color-background), 3px -3px var(--color-background),
+      3px 3px var(--color-background);
 
     background-size: 2px var(--font-size);
-    box-shadow: inset 0 -0.1rem var(--background-color),
+    box-shadow: inset 0 -0.1rem var(--color-background),
       inset 0 -0.2rem var(--color-highlight);
     display: inline;
 
@@ -53,16 +53,16 @@
     }
 
     .after {
-      background-color: var(--background-color);
+      background-color: var(--color-background);
       color: var(--color-highlight);
       display: inline;
       height: calc(var(--height) + 1px);
       position: absolute;
       overflow: hidden;
       text-overflow: clip;
-      text-shadow: -3px -3px var(--background-color),
-        -3px 3px var(--background-color), 3px -3px var(--background-color),
-        3px 3px var(--background-color);
+      text-shadow: -3px -3px var(--color-background),
+        -3px 3px var(--color-background), 3px -3px var(--color-background),
+        3px 3px var(--color-background);
       box-shadow: inset 0 0 var(--color-highlight),
         inset 0 -1px var(--color-highlight);
       transition: width 160ms ease-in-out;

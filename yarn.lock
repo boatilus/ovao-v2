@@ -2186,6 +2186,13 @@ svelte-sequential-preprocessor@^0.0.7:
     svelte "^3.42.6"
     tslib "~2.3.1"
 
+svelte-transition-extras@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/svelte-transition-extras/-/svelte-transition-extras-0.1.2.tgz#1b73d613cf6d005855fe864b3463563c59b37d4a"
+  integrity sha512-ZpPnMvN7LVsaDC0QOvNh3kdvQeh7sUnL++C8DuRgfdmKFT8wUq1HxMGW77hvpK4OAlezpXb9M8K2/6BfJzjW0A==
+  dependencies:
+    svelte "^3.44.0"
+
 svelte@^3.42.6, svelte@^3.44.0:
   version "3.44.3"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.44.3.tgz#795b1ced6ed3da44969099e5061b850c93c95e9a"

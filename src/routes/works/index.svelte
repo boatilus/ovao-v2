@@ -1,6 +1,8 @@
 <script lang="ts" context="module">
   export const prerender = true
 
+  const HEADLINE = 'Various Works'
+
   const MAX_HEIGHT = 385
   const COLS = 3
   const GAP = 15
@@ -10,7 +12,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { fly, slide } from 'svelte/transition'
-  import { flyOnce } from '$lib/util/transition'
+  import { flyOnce } from 'svelte-transition-extras'
   import { expoOut } from 'svelte/easing'
   import { theme } from '$lib/stores/theme'
   import { ELLO_URL, INSTAGRAM_URL } from '$lib/variables'
@@ -19,6 +21,7 @@
 
   import themes from '../../themes.json'
   import images from '../../works-manifest.json'
+  import { titler } from '$lib/util'
 
   theme.set(themes['/works*'])
 
@@ -64,15 +67,20 @@
   })
 </script>
 
+<svelte:head>
+  <title>{titler(HEADLINE)}</title>
+</svelte:head>
+
 <div id="works--container">
   <header
     in:flyOnce={{
+      id: 'works-header',
       duration: 2000,
       y: -10,
       easing: expoOut
     }}
   >
-    <h1>Various Works</h1>
+    <h1>{HEADLINE}</h1>
     <button on:click={() => (about_modal_open = !about_modal_open)}
       >About
       <svg
