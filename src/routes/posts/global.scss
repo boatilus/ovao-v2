@@ -1,14 +1,14 @@
 @import './src/_core';
 
-body {
-  background: hsl(var(--primary-hue), 37%, 12%);
+// body {
+//   background: hsl(var(--primary-hue), 37%, 12%);
 
-  @include desktop {
-    margin: 0 4vw;
-  }
-}
+//   @include desktop {
+//     margin: 0 4vw;
+//   }
+// }
 
-p {
+.rehype--p {
   line-height: calc(18px * var(--line-height-ratio));
   text-indent: 0.6em;
 
@@ -21,12 +21,12 @@ p {
   }
 }
 
-code {
+pre.shiki code {
   font-family: 'Fira Code', monospace;
   font-size: var(--font-size-mono);
 }
 
-a {
+.rehype--a {
   text-decoration: underline;
   text-decoration-color: var(--color-highlight);
   text-decoration-thickness: 2px;
