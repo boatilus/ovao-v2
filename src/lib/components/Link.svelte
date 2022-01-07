@@ -25,7 +25,7 @@
   bind:this={anchor_element}
   {href}
   {rel}
-  sveltekit:prefetch={prefetch ? undefined : true}
+  sveltekit:prefetch={prefetch ? true : undefined}
 >
   <span
     class="after"
