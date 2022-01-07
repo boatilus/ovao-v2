@@ -11,6 +11,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import anime from 'animejs'
+  import { Easings } from '$lib/util/anime'
   import { theme } from '$lib/stores/theme'
   import {
     ELLO_URL,
@@ -44,7 +45,7 @@
     anime({
       targets: header,
       opacity: [0, 1],
-      easing: 'linear',
+      easing: Easings.Linear,
       duration: 600
     })
     anime({
@@ -52,12 +53,12 @@
       translateY: {
         value: [-15, 0],
         duration: 800,
-        easing: 'easeOutExpo'
+        easing: Easings.OutExpo
       },
       opacity: {
         value: 1,
         duration: 400,
-        easing: 'linear'
+        easing: Easings.Linear
       },
       delay: anime.stagger(100)
     })
