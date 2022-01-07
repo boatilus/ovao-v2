@@ -1,5 +1,5 @@
 <script>
-  import './global.scss'
+  //import './global.scss'
 
   export let title
 </script>
@@ -28,7 +28,6 @@
       --font-size: 18px;
       --font-size-mono: 15px;
 
-      padding: 3.5em 0;
       width: 60em;
     }
 

@@ -1,5 +1,6 @@
 import fetch from 'node-fetch'
 import urls from 'rehype-urls'
+import addClasses from 'rehype-add-classes'
 
 /**
  * Checks for any broken links via a HEAD request in production. A warning
@@ -51,7 +52,17 @@ const config = {
     posts: './src/routes/posts/_layout.svelte'
   },
   remarkPlugins: [],
-  rehypePlugins: [[urls, checkLinks]]
+  rehypePlugins: [
+    [urls, checkLinks],
+    [
+      addClasses,
+      {
+        p: 'rehype--p',
+        a: 'rehype--a',
+        code: 'rehype--code'
+      }
+    ]
+  ]
 }
 
 export default config

@@ -5,9 +5,9 @@
     "links": "hsl(0,0%,100%)"
   },
   "/posts*": {
-    "background": "hsl(0,0%,0%)",
-    "text": "hsl(0,0%,80%)",
-    "links": "hsl(43,80%,57%)"
+    "background": "hsl(258,37%,12%)",
+    "text": "hsl(258,38%,72%)",
+    "links": "hsl(0,0%,100%)"
   },
   "/tree": {
     "background": "hsl(258,53%,24%)",
