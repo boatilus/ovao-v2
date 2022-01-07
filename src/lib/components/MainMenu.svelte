@@ -1,6 +1,8 @@
 <script lang="ts" context="module">
+  import { Easings } from '$lib/util/anime'
+
   const BUTTON_TOGGLE_DURATION = 250
-  const BUTTON_TOGGLE_EASING = 'easeOutExpo'
+  const BUTTON_TOGGLE_EASING = Easings.OutExpo
   const OVERLAY_DURATION = 300
   const LINK_DISTANCE = 30
   const LINK_FADE_DURATION = 400
@@ -15,6 +17,7 @@
     INSTAGRAM_URL,
     LINKEDIN_URL
   } from '$lib/variables'
+  import { dev } from '$app/env'
   import { page } from '$app/stores'
   import { theme } from '$lib/stores/theme'
   import anime from 'animejs'
@@ -111,11 +114,11 @@
       opacity: {
         value: [1, 0],
         duration: 60,
-        easing: 'linear'
+        easing: Easings.Linear
       },
       translateX: {
         value: LINK_DISTANCE,
-        easing: 'easeOutSine',
+        easing: Easings.OutSine,
         duration: 250
       },
       delay: anime.stagger(LINK_STAGGER / 2, { direction: 'reverse' })
@@ -123,7 +126,7 @@
 
     await anime({
       targets: [overlay, gradient],
-      easing: 'linear',
+      easing: Easings.Linear,
       duration: OVERLAY_DURATION / 2,
       opacity: 0
     }).finished
@@ -180,14 +183,14 @@
 
       const overlay_finished = anime({
         targets: [overlay],
-        easing: 'linear',
+        easing: Easings.Linear,
         duration: OVERLAY_DURATION,
         opacity: 0.6
       }).finished
 
       const gradient_finished = anime({
         targets: [gradient],
-        easing: 'linear',
+        easing: Easings.Linear,
         duration: OVERLAY_DURATION,
         opacity: 1
       })
@@ -197,11 +200,11 @@
         opacity: {
           value: [0, 1],
           duration: LINK_FADE_DURATION,
-          easing: 'linear'
+          easing: Easings.Linear
         },
         translateX: {
           value: [LINK_DISTANCE, 0],
-          easing: 'easeOutExpo',
+          easing: Easings.OutExpo,
           duration: LINK_SLIDE_DURATION
         },
         delay: anime.stagger(LINK_STAGGER)
@@ -278,6 +281,13 @@
       class:disabled={$page.url.pathname === '/works'}
       sveltekit:prefetch>Works</a
     >
+    {#if dev}
+      <a
+        href="/posts"
+        class:disabled={$page.url.pathname === '/posts'}
+        sveltekit:prefetch>Blog</a
+      >
+    {/if}
     <a
       href="/resume"
       class:disabled={$page.url.pathname === '/resume'}
