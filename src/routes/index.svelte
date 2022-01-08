@@ -12,13 +12,11 @@
 
   import themes from '../themes.json'
 
-  import Link from '$lib/components/Link.svelte'
+  theme.set(themes['/'])
 
   let h1_element: SVGElement
   let h2_element: SVGElement
   let summary_element: HTMLDivElement
-
-  theme.set(themes['/'])
 
   onMount(() => {
     if ($started) {
@@ -185,9 +183,9 @@
         rel="external"
         href="https://github.com/boatilus">GitHub</Link
       >, and I blog <Link href="/posts">occasionally</Link>.-->I
-      also dabble in <Link href="/works" prefetch>digital art</Link>.
+      also dabble in <a href="/works" sveltekit:prefetch>digital art</a>.
     </p>
-    <p>You can reach me <Link href="mailto:ron@ovao.dev">here</Link>.</p>
+    <p>You can reach me <a href="mailto:ron@ovao.dev">here</a>.</p>
   </div>
 </div>
 
@@ -288,6 +286,23 @@
       font-size: var(--font-size);
       line-height: 1.5em;
       text-rendering: geometricPrecision;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    white-space: nowrap;
+    text-shadow: -3px -3px var(--color-background),
+      -3px 3px var(--color-background), 3px -3px var(--color-background),
+      3px 3px var(--color-background);
+
+    background-size: 2px var(--font-size);
+    box-shadow: inset 0 -0.1rem var(--color-background),
+      inset 0 -0.2rem var(--color-highlight);
+    transition: 250ms color;
+
+    &:hover {
+      color: var(--color-highlight);
     }
   }
 
