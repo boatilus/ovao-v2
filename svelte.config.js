@@ -12,16 +12,14 @@ import proc from './preprocess.js'
  * feed to the resume/[org] routes.
  */
 const getResumePaths = () => {
-  const filenames = readdirSync('./static/_orgs')
+  if (!process.env.RESUME_PATHS) {
+    console.warn('RESUME_PATHS unspecified; did you run with env-cmd?')
+    return []
+  }
 
-  return filenames
-    .filter(
-      (filename) => filename !== 'base.json' || !filename.includes('.json')
-    )
-    .map((filename) => {
-      const { name } = path.parse(filename)
-      return `/resume/${name}`
-    })
+  const paths = process.env.RESUME_PATHS.split(',')
+
+  return paths.map((path) => `/resume/${path}`)
 }
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -42,6 +40,11 @@ const config = {
       entries: ['*', ...getResumePaths()]
     },
     target: 'body'
+  },
+  vite: {
+    define: {
+      'process.env': process.env
+    }
   }
 }
 

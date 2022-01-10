@@ -3,6 +3,7 @@
 /.svelte-kit
 /package
 /__internal
+/static/_orgs
 .DS_Store
 node_modules
 .env
