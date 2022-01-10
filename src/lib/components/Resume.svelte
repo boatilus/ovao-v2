@@ -4,14 +4,14 @@
   export let skills = [
     'Collecting & Documenting Requirements',
     'Project Management',
-    'Driving Excellence',
     'Building Workflow Diagrams',
-    'Facilitating Meetings',
-    'Resolving Problems',
+    'Iterative Process Improvement',
     'Maintaining Scope & Schedule',
-    'Managing Vendors',
-    'Organizing & Prioritizing',
-    'Cross-Functional Teamwork',
+    'Validating Business Needs',
+    'Managing Vendor Relationships',
+    'Increasing Productivity & Competency',
+    'Converting & Ingesting Data',
+    'Cross-Functional Collaboration',
     'Data-Driven Reporting',
     'Policies & Procedures'
   ]
@@ -56,29 +56,28 @@
     </div>
   </div>
 
-  <div id="summary" class="block">
+  <section id="summary" class="block">
     <p>
       Analytical, solutions-focused professional offering technology and project
-      management expertise with proven success collaboratively resolving
-      challenges for diverse small- and mid-sized businesses (SMB) through
-      automation. History of innovating bespoke software integration solutions
-      to drive process improvement and operational excellence. Unique blend of
-      financial acumen, programming and design proficiency, and
-      relationship-building skills leveraged to harness opportunities and
-      mitigate risks.
+      management expertise with proven success in collaboratively resolving
+      challenges for diverse small- and mid-sized businesses through automation.
+      History of innovating bespoke software integration solutions to drive
+      process improvement and operational excellence. Unique blend of financial
+      acumen, programming and design proficiency, and relationship-building
+      skills leveraged to harness opportunities and mitigate risks.
     </p>
-  </div>
+  </section>
 
-  <div id="key_skills" class="block">
+  <section id="key_skills" class="block">
     <h1>Key Skills</h1>
     <ul>
       {#each skills as skill}
         <li>{skill}</li>
       {/each}
     </ul>
-  </div>
+  </section>
 
-  <div id="professional_experience" class="block">
+  <section id="professional_experience" class="block">
     <h1>Professional Experience</h1>
     <div class="header">
       <div>
@@ -88,16 +87,16 @@
           <strong>Manager of Operations, California</strong>
         </p>
       </div>
-      <div>7/2018 - 10/2021</div>
+      <div class="date-range">7/2018 - 10/2021</div>
     </div>
 
     <p>
       Improved customer experiences by enabling sales staff to quickly and
       accurately produce quotes via proprietary tablet-focused quoting and
-      in-home presentation app. Facilitate meetings with vendors and serve as
+      in-home presentation app. Facilitated meetings with vendors and served as
       hands-on developer, working collaboratively to align deliverables with
-      requirements and specifications. Collect and document requirements for new
-      and existing platforms.
+      requirements and specifications. Collected and documented requirements for
+      new and existing platforms.
     </p>
 
     <ul>
@@ -142,12 +141,13 @@
           <strong>Controller</strong>
         </p>
       </div>
-      <div>7/2005 - 7/2018</div>
+      <div class="date-range">7/2005 - 7/2018</div>
     </div>
 
     <p>
       Balanced priorities between payables, receivables, financial reporting,
-      budgeting, forecasting, payroll, and tax filing. Instituted custom
+      budgeting, forecasting, payroll, tax filing, and regulatory compliance.
+      Oversaw overall accounting practices and implementation. Instituted custom
       voicemail and call routing solution to replace legacy hosted PBX system.
       Drove regulatory alignment by establishing and enforcing HACCP food safety
       compliance program.
@@ -173,37 +173,9 @@
         creating Node.js-based online ordering system for $600K/year client.
       </li>
     </ul>
-  </div>
+  </section>
 
-  <div id="education" class="block">
-    <h1>Education</h1>
-    <p>
-      <strong>High School Diploma</strong><br />
-      Dacula High School, Dacula, GA
-    </p>
-  </div>
-
-  <div id="training" class="block">
-    <h1>Professional Training & Certifications</h1>
-    <p>
-      <strong>Google Data Analytics Professional Certificate</strong><br />
-      Google (anticipated completion: 3/2022)
-    </p>
-    <p>
-      <strong>Applied Data Science with Python</strong><br />
-      University of Michigan (anticipated completion: 1/2022)
-    </p>
-
-    {#if show_quickbooks_cert}
-      <p>
-        <strong>QuickBooks Online Advanced ProAdvisor Certification</strong><br
-        />
-        Intuit
-      </p>
-    {/if}
-  </div>
-
-  <div id="technical_proficiencies" class="block">
+  <section id="technical_proficiencies" class="block">
     <h1>Technical Proficiencies</h1>
     <div id="technical_proficiencies-grid">
       <h3><strong>Environments</strong></h3>
@@ -221,9 +193,37 @@
         (MongoDB, RethinkDB), and key-value stores (Redis, LMDB, BoltDB).
       </p>
       <h3><strong>Languages</strong></h3>
-      <p>C++17/20, Golang, Python, SQL, JavaScript / TypeScript.</p>
+      <p>C++17/20, Golang, Python, SQL, JavaScript / TypeScript, HTML, CSS</p>
     </div>
-  </div>
+  </section>
+
+  <section id="education" class="block">
+    <h1>Education</h1>
+    <p>
+      <strong>High School Diploma</strong><br />
+      Dacula High School, Dacula, GA
+    </p>
+  </section>
+
+  <section id="training" class="block">
+    <h1>Professional Training & Certifications</h1>
+    <p>
+      <strong>Google Data Analytics Professional Certificate</strong><br />
+      Google (anticipated completion: 3/2022)
+    </p>
+    <p>
+      <strong>Applied Data Science with Python</strong><br />
+      University of Michigan (anticipated completion: 1/2022)
+    </p>
+
+    {#if show_quickbooks_cert}
+      <p>
+        <strong>QuickBooks Online Advanced ProAdvisor Certification</strong><br
+        />
+        Intuit
+      </p>
+    {/if}
+  </section>
 </main>
 
 <style lang="scss">
@@ -353,6 +353,12 @@
 
   .city {
     margin-left: 1em;
+  }
+
+  .date-range {
+    @include mobile {
+      margin-bottom: 1em;
+    }
   }
 
   #top {
