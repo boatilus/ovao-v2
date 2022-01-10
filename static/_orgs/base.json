@@ -3,6 +3,7 @@
   "skills": [
     "Collecting & Documenting Requirements",
     "Project Management",
+<<<<<<< HEAD
     "Building Workflow Diagrams",
     "Iterative Process Improvement",
     "Maintaining Scope & Schedule",
@@ -11,6 +12,16 @@
     "Increasing Productivity & Competency",
     "Converting & Ingesting Data",
     "Cross-Functional Collaboration",
+=======
+    "Driving Excellence",
+    "Building Workflow Diagrams",
+    "Facilitating Meetings",
+    "Resolving Problems",
+    "Maintaining Scope & Schedule",
+    "Managing Vendors",
+    "Organizing / Prioritizing",
+    "Cross-Functional Teamwork",
+>>>>>>> 2a82d6c0d5126568d55d0fbf38c3f3283249c365
     "Data-Driven Reporting",
     "Policies & Procedures"
   ],
