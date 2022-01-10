@@ -1,22 +1,35 @@
 import type { RequestHandler } from '@sveltejs/kit'
-import { readFile as _readFile } from 'fs'
-import { promisify } from 'util'
-
-const readFile = promisify(_readFile)
+import path from 'path'
 
 export const get: RequestHandler = async ({ params }) => {
   const { org } = params
+  const url = path.join(process.env.RESUME_API_URL, org)
+
+  const res = await fetch(url, {
+    method: 'GET',
+    headers: {
+      Authorization: `Basic ${Buffer.from(
+        process.env.RESUME_API_KEY + ':'
+      ).toString('base64')}`
+    }
+  })
+  if (!res.ok) {
+    return {
+      status: 500,
+      body: res.statusText
+    }
+  }
 
   try {
-    const file = await readFile(`./static/_orgs/${org}.json`, 'utf-8')
+    const { data } = await res.json()
 
     return {
-      body: file
+      body: data
     }
-  } catch (error) {
+  } catch (err) {
     return {
-      status: 404,
-      body: `no org with name ${org}`
+      status: 500,
+      body: err
     }
   }
 }
