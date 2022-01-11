@@ -136,12 +136,15 @@
     id="works--grid"
     style="--border-width: {BORDER_WIDTH}px; --row-gap: {GAP}px"
   >
-    {#each images as { name, dominant_color, base }, i}
+    {#each images as image, i}
       <GridImage
-        {name}
-        {dominant_color}
-        base_width={base.width}
-        base_height={base.height}
+        name={image.name}
+        dominant_color={image.dominant_color}
+        base_width={image.base.width}
+        base_height={image.base.height}
+        base={image.base}
+        two_x={image['@2x']}
+        three_x={image['@3x']}
         row_height={row_heights[Math.floor(i / COLS)]}
       />
     {/each}
