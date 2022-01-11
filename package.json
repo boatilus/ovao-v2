@@ -55,6 +55,6 @@
 		"animejs": "^3.2.1",
 		"disable-scroll": "^0.6.0",
 		"hotkeys-js": "^3.8.7",
-		"svelte-transition-extras": "^0.1.2"
+		"svelte-transition-extras": "0.1.4"
 	}
 }
