@@ -36,7 +36,7 @@
 		"prettier-plugin-svelte": "^2.4.0",
 		"rehype-add-classes": "^1.0.0",
 		"rehype-urls": "^1.1.1",
-		"sass": "^1.45.1",
+		"sass": "1.45.1",
 		"schema-dts": "^1.0.0",
 		"sharp": "^0.29.3",
 		"shiki": "^0.9.15",
@@ -55,6 +55,6 @@
 		"animejs": "^3.2.1",
 		"disable-scroll": "^0.6.0",
 		"hotkeys-js": "^3.8.7",
-		"svelte-transition-extras": "^0.1.2"
+		"svelte-transition-extras": "0.1.4"
 	}
 }

@@ -1,36 +1,72 @@
 [
   {
-    "name": "clip",
+    "name": "404",
     "aspect_ratio": 1,
-    "dominant_color": "rgb(104, 104, 104)",
+    "dominant_color": "rgb(216, 248, 248)",
     "base": {
       "width": 385,
-      "height": 385
+      "height": 385,
+      "webp": {
+        "hash": "2054f4226a4dc4a3353f93480a969606eafab59f"
+      },
+      "jpg": {
+        "hash": "6f34704ba0e796cfd65253289a3979982b2c234f"
+      }
     },
     "@2x": {
       "width": 770,
-      "height": 770
+      "height": 770,
+      "webp": {
+        "hash": "658219b704c9cc13f5026e36f73d779ce04ac76a"
+      },
+      "jpg": {
+        "hash": "ad9d842e5821ac25a942d2b8ee637f7e9b568d64"
+      }
     },
     "@3x": {
       "width": 1155,
-      "height": 1155
+      "height": 1155,
+      "webp": {
+        "hash": "968f3028405b07dafa7111660d82d4d96d2ac22e"
+      },
+      "jpg": {
+        "hash": "a0352bba3b6aab75082bbfec520fcd330a5246fd"
+      }
     }
   },
   {
     "name": "714",
     "aspect_ratio": 1,
-    "dominant_color": "rgb(248, 72, 72)",
+    "dominant_color": "rgb(248, 248, 232)",
+    "@3x": {
+      "width": 1155,
+      "height": 1155,
+      "webp": {
+        "hash": "004ffa6f8fd5ffa51953a0898a6652354dd6d9a7"
+      },
+      "jpg": {
+        "hash": "4172d7e0ea2ec6d1e616d7c9a0dadd730ea25b55"
+      }
+    },
     "base": {
       "width": 385,
-      "height": 385
+      "height": 385,
+      "jpg": {
+        "hash": "04d05f3ac10669e7fd2b44ce3906123b129cfb1d"
+      },
+      "webp": {
+        "hash": "6553d85f9e744e0eeb25261f755f7dc585f05467"
+      }
     },
     "@2x": {
       "width": 770,
-      "height": 770
-    },
-    "@3x": {
-      "width": 1155,
-      "height": 1155
+      "height": 770,
+      "jpg": {
+        "hash": "8b0ef491e3295597265be4c5c5b41b3e24713a77"
+      },
+      "webp": {
+        "hash": "c173c2108f727864ec838d817f719d84a21c2dbc"
+      }
     }
   },
   {
@@ -39,15 +75,138 @@
     "dominant_color": "rgb(248, 248, 248)",
     "base": {
       "width": 677,
-      "height": 385
-    },
-    "@2x": {
-      "width": 1353,
-      "height": 770
+      "height": 385,
+      "webp": {
+        "hash": "199ecbb38772dc10d15590a5e17b2475dcad142e"
+      },
+      "jpg": {
+        "hash": "9eac3bbf72533fcb620c26df157d977932392eed"
+      }
     },
     "@3x": {
       "width": 2030,
-      "height": 1155
+      "height": 1155,
+      "jpg": {
+        "hash": "72ee0fff0ba783a4bd2f3b349f281c686cdd50ad"
+      },
+      "webp": {
+        "hash": "88b0ed90b766d7db85f5e64780b0e16c03d2393e"
+      }
+    },
+    "@2x": {
+      "width": 1353,
+      "height": 770,
+      "webp": {
+        "hash": "a30fe4cd4805f99d51b1d6093487283966a12c30"
+      },
+      "jpg": {
+        "hash": "b85d1c97dfb0bb5c32ae83a7fca54e7677db8d1b"
+      }
+    }
+  },
+  {
+    "name": "408-noiseless",
+    "aspect_ratio": 1,
+    "dominant_color": "rgb(88, 200, 232)",
+    "@3x": {
+      "width": 1155,
+      "height": 1155,
+      "webp": {
+        "hash": "169ffc5603bb575a18f65ac56d84e4a70bcb3f8b"
+      },
+      "jpg": {
+        "hash": "9a0cdecc03052b51fb0148ff03fc101c37eb675c"
+      }
+    },
+    "base": {
+      "width": 385,
+      "height": 385,
+      "jpg": {
+        "hash": "2d8df9a708134acddba262249ee2d7f1ea36cf90"
+      },
+      "webp": {
+        "hash": "d0bf0be97da538d9538a902d27976dd13b9150de"
+      }
+    },
+    "@2x": {
+      "width": 770,
+      "height": 770,
+      "jpg": {
+        "hash": "2fb6af17843e6c94add2e9daa5f69fcb0f3be97e"
+      },
+      "webp": {
+        "hash": "ab48185e02b8300326595185cacbfbe11d541f42"
+      }
+    }
+  },
+  {
+    "name": "514-A",
+    "aspect_ratio": 1.5341991341991341,
+    "dominant_color": "rgb(8, 8, 8)",
+    "@3x": {
+      "width": 1772,
+      "height": 1155,
+      "webp": {
+        "hash": "0e83ca68503de09e6349378db45f7d734a3a907e"
+      },
+      "jpg": {
+        "hash": "5e42cf596c82932780e2bb95f5017b114e423d05"
+      }
+    },
+    "@2x": {
+      "width": 1181,
+      "height": 770,
+      "jpg": {
+        "hash": "1c9178fe7cd5538e08b2b7041544f0af958cd8a3"
+      },
+      "webp": {
+        "hash": "68593072a696dcd097818b12ecdc8e721313311b"
+      }
+    },
+    "base": {
+      "width": 590,
+      "height": 385,
+      "webp": {
+        "hash": "667679c3e9f2add58164b2ce0f1af80ca8725488"
+      },
+      "jpg": {
+        "hash": "c3e5a29f4adb0c733433fe2dd81552216ecf2ba9"
+      }
+    }
+  },
+  {
+    "name": "514-C",
+    "aspect_ratio": 1.5341991341991341,
+    "dominant_color": "rgb(8, 8, 8)",
+    "@3x": {
+      "width": 1772,
+      "height": 1155,
+      "webp": {
+        "hash": "30b5d9c2f4b2c2e3e978a082a11440b6aa40e500"
+      },
+      "jpg": {
+        "hash": "3acffea86ecc86bf93c2e2a940ce5201f6624f37"
+      }
+    },
+    "@2x": {
+      "width": 1181,
+      "height": 770,
+      "webp": {
+        "hash": "3dfdae65dcfe176edcf0a4b3935747f3db1d2a2d"
+      },
+      "jpg": {
+        "hash": "fcd27d26cf8d547f776e3c11852015022136e52d"
+      }
+    },
+    "base": {
+      "width": 590,
+      "height": 385,
+      "webp": {
+        "hash": "8480d58675fd1f0307666ed70067a3052633e9d4"
+      },
+      "jpg": {
+        "hash": "d2f94e600aef6f260d34906d3c1de9d17a756605"
+      }
     }
   },
   {
@@ -56,100 +215,103 @@
     "dominant_color": "rgb(8, 120, 136)",
     "base": {
       "width": 573,
-      "height": 385
-    },
-    "@2x": {
-      "width": 1146,
-      "height": 770
+      "height": 385,
+      "webp": {
+        "hash": "185d5cb99ba85081109cceefe47e768f3e6b7c0c"
+      },
+      "jpg": {
+        "hash": "9da39c8929c6ce194119645965f42d2706925d49"
+      }
     },
     "@3x": {
       "width": 1719,
-      "height": 1155
+      "height": 1155,
+      "webp": {
+        "hash": "337dc4d4648f7fb745171b018c4dcc13173fd85f"
+      },
+      "jpg": {
+        "hash": "9d8c62dd1818a2820b8c3a40d343763bf94ffa09"
+      }
+    },
+    "@2x": {
+      "width": 1146,
+      "height": 770,
+      "webp": {
+        "hash": "95d54131bf4531ea88b07b318de574698f326c15"
+      },
+      "jpg": {
+        "hash": "bb600abf730dad2bd7a450d928b40308f5945f54"
+      }
     }
   },
   {
-    "name": "404",
+    "name": "clip",
     "aspect_ratio": 1,
-    "dominant_color": "rgb(216, 248, 248)",
-    "base": {
-      "width": 385,
-      "height": 385
-    },
+    "dominant_color": "rgb(72, 72, 72)",
     "@2x": {
       "width": 770,
-      "height": 770
+      "height": 770,
+      "webp": {
+        "hash": "22c76867507da2a331d7b25d5c6479e7f833e6c6"
+      },
+      "jpg": {
+        "hash": "7a1ff88a973a9ff7def6c9506e25b9fe2a023fc9"
+      }
     },
     "@3x": {
       "width": 1155,
-      "height": 1155
-    }
-  },
-  {
-    "name": "514-A",
-    "aspect_ratio": 1.5324675324675325,
-    "dominant_color": "rgb(216, 136, 136)",
+      "height": 1155,
+      "jpg": {
+        "hash": "405bab09fc280198225e7f86122aa6befd48ca1e"
+      },
+      "webp": {
+        "hash": "51307a27410adc2c1498cd6abc8c45932737cad9"
+      }
+    },
     "base": {
-      "width": 590,
-      "height": 385
-    },
-    "@2x": {
-      "width": 1181,
-      "height": 770
-    },
-    "@3x": {
-      "width": 1772,
-      "height": 1155
-    }
-  },
-  {
-    "name": "514-C",
-    "aspect_ratio": 1.5324675324675325,
-    "dominant_color": "rgb(8, 8, 8)",
-    "base": {
-      "width": 590,
-      "height": 385
-    },
-    "@2x": {
-      "width": 1181,
-      "height": 770
-    },
-    "@3x": {
-      "width": 1772,
-      "height": 1155
+      "width": 385,
+      "height": 385,
+      "webp": {
+        "hash": "927b738a3a3275a0146d67a4dc4c8321d0934525"
+      },
+      "jpg": {
+        "hash": "e6154ee37385ff06e83d4a6540615154ca274db2"
+      }
     }
   },
   {
     "name": "dsfg-comp",
     "aspect_ratio": 0.7714285714285715,
     "dominant_color": "rgb(184, 248, 40)",
-    "base": {
-      "width": 297,
-      "height": 385
+    "@3x": {
+      "width": 891,
+      "height": 1155,
+      "jpg": {
+        "hash": "30873cb35300e4b005bc987656e635008f486ef9"
+      },
+      "webp": {
+        "hash": "b0b129b1a805459020ae08dbe79af94acdeba0d6"
+      }
     },
     "@2x": {
       "width": 594,
-      "height": 770
+      "height": 770,
+      "jpg": {
+        "hash": "3c7e7acf0ca2b3a4b7771b5e730fe9527a1deb8e"
+      },
+      "webp": {
+        "hash": "5adbc92428eb4c82006a94567ac3c0fe686d3fdb"
+      }
     },
-    "@3x": {
-      "width": 891,
-      "height": 1155
-    }
-  },
-  {
-    "name": "408-noiseless",
-    "aspect_ratio": 1,
-    "dominant_color": "rgb(88, 200, 232)",
     "base": {
-      "width": 385,
-      "height": 385
-    },
-    "@2x": {
-      "width": 770,
-      "height": 770
-    },
-    "@3x": {
-      "width": 1155,
-      "height": 1155
+      "width": 297,
+      "height": 385,
+      "jpg": {
+        "hash": "4e653d90da874e6bd1f508f78ae8fe63cc2ce164"
+      },
+      "webp": {
+        "hash": "66fd24ec56ac61e808bf5922f268e96956a70595"
+      }
     }
   }
 ]
