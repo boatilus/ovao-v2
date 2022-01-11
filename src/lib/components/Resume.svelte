@@ -185,7 +185,7 @@
         JIRA, Acumatica, Git, Node.js, Go web applications, REST APIs, React /
         React Native, SQL Server Management Studio, container-based PaaS, Adobe
         Photoshop & Illustrator, Sketch, Pixelmator Pro, QuickBooks Online /
-        Desktop inc. payroll), Compeat RMS.
+        Desktop inc. payroll), Square Payments, Twilio, Compeat RMS.
       </p>
       <h3><strong>Databases</strong></h3>
       <p>
