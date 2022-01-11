@@ -38,7 +38,6 @@
     /images/works/{name}+{base.jpg.hash}.jpg"
   />
   <img
-    src="/images/works/{name}+{base.jpg.hash}.jpg"
     height={row_height}
     width={computed_width}
     alt={name}
