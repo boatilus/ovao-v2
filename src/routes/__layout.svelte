@@ -26,6 +26,20 @@
     const subscriber = createSubscriber(document, previous_theme)
     const unsubscribe = theme.subscribe(subscriber)
 
+    // Load fonts via link tag injection to prevent grotesque delays.
+    let stylesheet = document.createElement('link')
+
+    stylesheet.href =
+      'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap'
+    stylesheet.rel = 'stylesheet'
+
+    // Temporarily set media to something inapplicable to ensure it'll fetch
+    // without blocking rendering, then re-set on load.
+    stylesheet.media = 'only x'
+    stylesheet.addEventListener('load', () => (stylesheet.media = 'screen'))
+
+    document.getElementsByTagName('head')[0].appendChild(stylesheet)
+
     return () => {
       unsubscribe()
     }
