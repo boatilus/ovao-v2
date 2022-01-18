@@ -30,7 +30,6 @@ const parse_opts = {
 }
 
 const parser = new XMLParser(parse_opts)
-
 const tag_regex = new RegExp(/<CodeBlock[\s\S]*?>([\s\S]*?)<\/CodeBlock>/g)
 
 const default_opts = {

@@ -1,11 +1,17 @@
-import { readdirSync } from 'fs'
-import path from 'path'
+import { readFileSync } from 'fs'
 import { mdsvex } from 'mdsvex'
 import mdsvex_config from './mdsvex.config.js'
 import adapter from '@sveltejs/adapter-static'
 import sequential from 'svelte-sequential-preprocessor'
 import preprocess from 'svelte-preprocess'
-import proc from './preprocess.js'
+import escape from './escape.js'
+import shiki from 'shiki'
+
+const code_theme = JSON.parse(
+  readFileSync('./src/rose-pine-color-theme.json', 'utf-8')
+)
+
+const highlighter = await shiki.getHighlighter({ theme: code_theme })
 
 /**
  * Scans the ./static/_orgs directory for JSON files describing properties to
@@ -26,7 +32,10 @@ const getResumePaths = () => {
 const config = {
   extensions: ['.svelte', ...mdsvex_config.extensions],
   preprocess: sequential([
-    proc({ format: true }),
+    escape({
+      extensions: ['.svelte', '.svelte.md'],
+      highlighter: highlighter.codeToHtml
+    }),
     preprocess(),
     mdsvex(mdsvex_config)
   ]),

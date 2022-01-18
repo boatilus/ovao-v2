@@ -30,10 +30,18 @@
 </script>
 
 <script lang="ts">
+  import { titler } from '$lib/util'
+  import { flyOnce } from 'svelte-transition-extras'
+  import { header_fly_opts } from '$lib/constants'
+
   export let posts: Value[]
 </script>
 
-<h1>All Posts</h1>
+<svelte:head>
+  <title>{titler('All Posts')}</title>
+</svelte:head>
+
+<h1 in:flyOnce={{ id: 'posts-index-header', ...header_fly_opts }}>All Posts</h1>
 {#each posts as { title, date, slug, synopsis }}
   <div class="post-block">
     <div class="header-block">
@@ -63,9 +71,10 @@
   }
 
   h1 {
+    @include large-heading;
+
     color: transparent;
-    margin-top: -0.25em;
-    -webkit-text-stroke-width: 2px;
+    font-weight: 500;
     -webkit-text-stroke-color: hsla(
       var(--primary-hue),
       var(--highlight-sat),
@@ -74,13 +83,14 @@
     );
 
     @include desktop {
-      font-size: 72px;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.25em;
+      -webkit-text-stroke-width: 2px;
     }
 
     @include mobile {
-      font-size: 16vw;
+      margin-top: 0.25em;
       margin-bottom: 0.25em;
+      -webkit-text-stroke-width: 1.5px;
     }
   }
 
@@ -93,7 +103,15 @@
     }
 
     @include mobile {
-      font-size: 22px;
+      font-size: 20px;
+    }
+
+    a {
+      text-decoration: underline;
+      text-decoration-color: var(--color-highlight);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.2em;
+      text-decoration-skip-ink: all;
     }
   }
 
