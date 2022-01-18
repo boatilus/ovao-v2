@@ -92,6 +92,10 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-weight: 400;
+
+  @include mobile {
+    -webkit-text-size-adjust: 100%;
+  }
 }
 
 a {

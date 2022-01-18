@@ -183,6 +183,7 @@
     border-top: 1px solid var(--color-subdued-text);
     font-size: 16px;
     opacity: 1;
+    padding-top: 0.5em;
 
     @include desktop {
       margin-top: 5em;
@@ -191,7 +192,8 @@
 
     @include mobile {
       margin-top: 4em;
-      padding: 0 var(--horz-margin);
+      padding-left: var(--horz-margin);
+      padding-right: var(--horz-margin);
     }
   }
 
