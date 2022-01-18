@@ -30,8 +30,14 @@
 </script>
 
 <script lang="ts">
+  import { titler } from '$lib/util'
+
   export let posts: Value[]
 </script>
+
+<svelte:head>
+  <title>{titler('All Posts')}</title>
+</svelte:head>
 
 <h1>All Posts</h1>
 {#each posts as { title, date, slug, synopsis }}
@@ -63,9 +69,9 @@
   }
 
   h1 {
+    @include large-heading;
+
     color: transparent;
-    margin-top: -0.25em;
-    -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: hsla(
       var(--primary-hue),
       var(--highlight-sat),
@@ -74,13 +80,14 @@
     );
 
     @include desktop {
-      font-size: 72px;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.25em;
+      -webkit-text-stroke-width: 2px;
     }
 
     @include mobile {
-      font-size: 16vw;
+      margin-top: 0.25em;
       margin-bottom: 0.25em;
+      -webkit-text-stroke-width: 1.5px;
     }
   }
 
@@ -93,7 +100,15 @@
     }
 
     @include mobile {
-      font-size: 22px;
+      font-size: 20px;
+    }
+
+    a {
+      text-decoration: underline;
+      text-decoration-color: var(--color-highlight);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.2em;
+      text-decoration-skip-ink: all;
     }
   }
 
