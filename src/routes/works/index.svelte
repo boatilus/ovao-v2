@@ -150,7 +150,9 @@
     {/each}
   </section>
 
-  <footer><small>&copy; Ron Jones 2022. All rights reserved.</small></footer>
+  <footer>
+    <small>Copyright &copy; Ron Jones 2022. All rights reserved.</small>
+  </footer>
 </div>
 
 <style lang="scss">
@@ -175,16 +177,11 @@
       }
 
       & > h1 {
-        font-size: 84px;
-        letter-spacing: -0.05em;
+        @include large-heading;
+
         margin: 0;
 
-        @include desktop {
-          font-size: 84px;
-        }
-
         @include mobile {
-          font-size: 12vw;
           margin-bottom: 0.5rem;
         }
       }
@@ -286,6 +283,7 @@
     }
 
     @include mobile {
+      margin-top: 3em;
       margin-bottom: 1em;
       opacity: 0.75;
       text-align: center;

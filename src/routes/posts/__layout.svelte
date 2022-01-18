@@ -1,3 +1,7 @@
+<script lang="ts" context="module">
+  export const prerender = true
+</script>
+
 <script lang="ts">
   import { theme } from '$lib/stores/theme'
 
@@ -17,7 +21,6 @@
   #posts--container {
     @include desktop {
       margin: 0 4vw;
-      padding: 3.5em 0;
     }
   }
 </style>

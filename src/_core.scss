@@ -23,3 +23,15 @@ $breakpoint: 812px;
     @content;
   }
 }
+
+@mixin large-heading {
+  letter-spacing: -0.05em;
+
+  @include desktop {
+    font-size: 84px;
+  }
+
+  @include mobile {
+    font-size: 12vw;
+  }
+}

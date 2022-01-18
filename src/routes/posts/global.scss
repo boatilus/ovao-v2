@@ -8,28 +8,87 @@
 //   }
 // }
 
-.rehype--p {
-  line-height: calc(18px * var(--line-height-ratio));
-  text-indent: 0.6em;
+#post--article {
+  p {
+    line-height: calc(18px * var(--line-height-ratio));
 
-  code {
-    font-size: var(--font-size-mono);
+    code {
+      color: var(--color-highlight);
+      font-size: var(--font-size-mono);
+    }
+
+    @include desktop {
+      text-indent: 0.6em;
+    }
+
+    @include mobile {
+      padding: 0 10px;
+    }
   }
 
-  @include mobile {
-    padding: 0 10px;
+  a {
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    text-decoration-skip-ink: all;
+
+    code {
+      color: var(--color-link);
+    }
+  }
+
+  blockquote {
+    --line-height: 20px;
+    --note--font-size: 16px;
+
+    background: var(--color-background-dark);
+    border-radius: var(--border-radius-standard);
+    font-size: var(--note--font-size);
+    line-height: calc(var(--note--font-size) * var(--line-height-ratio));
+    margin: 2em 0;
+
+    // <h3> used as a prefix. E.g., 'NOTE', 'IMPORTANT'
+    h3 {
+      color: var(--color-highlight);
+      display: inline;
+      align-items: center;
+      font-size: inherit;
+      font-weight: 500;
+      height: var(--line-height);
+      line-height: var(--line-height);
+      letter-spacing: 0.1em;
+      margin-right: 0.25em;
+      text-transform: uppercase;
+
+      &::after {
+        content: ':';
+      }
+    }
+
+    p {
+      display: inline;
+      line-height: var(--line-height);
+      padding: 0; // overrides <p> padding for mobile
+    }
+
+    &:first-of-type(strong) {
+      display: inline-block;
+      margin-right: 7px;
+      text-transform: uppercase;
+    }
+
+    @include desktop {
+      padding: 1em 1em 1em;
+    }
+
+    @include mobile {
+      padding: 1em 10px 0.5em 10px;
+    }
   }
 }
 
 pre.shiki code {
   font-family: 'Fira Code', monospace;
   font-size: var(--font-size-mono);
-}
-
-.rehype--a {
-  text-decoration: underline;
-  text-decoration-color: var(--color-highlight);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.2em;
-  text-decoration-skip-ink: all;
 }
