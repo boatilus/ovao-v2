@@ -17,7 +17,6 @@
     INSTAGRAM_URL,
     LINKEDIN_URL
   } from '$lib/variables'
-  import { dev } from '$app/env'
   import { page } from '$app/stores'
   import { theme } from '$lib/stores/theme'
   import anime from 'animejs'
@@ -281,13 +280,11 @@
       class:disabled={$page.url.pathname === '/works'}
       sveltekit:prefetch>Works</a
     >
-    {#if dev}
-      <a
-        href="/posts"
-        class:disabled={$page.url.pathname === '/posts'}
-        sveltekit:prefetch>Blog</a
-      >
-    {/if}
+    <a
+      href="/posts"
+      class:disabled={$page.url.pathname === '/posts'}
+      sveltekit:prefetch>Blog</a
+    >
     <a
       href="/resume"
       class:disabled={$page.url.pathname === '/resume'}

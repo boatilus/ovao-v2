@@ -5,10 +5,10 @@
 <script lang="ts">
   import { Easings } from '$lib/util/anime'
   import { started } from '$lib/stores/core'
+  import { TITLE } from '$lib/variables'
   import anime from 'animejs'
   import { onMount } from 'svelte'
   import { theme } from '$lib/stores/theme'
-  import { TITLE } from '$lib/variables'
 
   import themes from '../themes.json'
 
@@ -179,11 +179,11 @@
   </svg>
   <div bind:this={summary_element} id="index--summary">
     <p>
-      I'm a developer, technologist and business analyst in Los Angeles. <!--I'm on <Link
-        rel="external"
-        href="https://github.com/boatilus">GitHub</Link
-      >, and I blog <Link href="/posts">occasionally</Link>.-->I
-      also dabble in <a href="/works" sveltekit:prefetch>digital art</a>.
+      I'm a developer, technologist and business analyst in Los Angeles. I'm on <a
+        href="https://github.com/boatilus"
+        rel="external">GitHub</a
+      >, and <a href="/posts" sveltekit:prefetch>I blog occasionally</a>. I also
+      dabble in <a href="/works" sveltekit:prefetch>digital art</a>.
     </p>
     <p>You can reach me <a href="mailto:ron@ovao.dev">here</a>.</p>
   </div>

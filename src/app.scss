@@ -5,6 +5,7 @@
     --font-system: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
       Helvetica, Arial, sans-serif;
     --font-body: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-monospace: 'Fira Code', monospace;
 
     --primary-hue: 258;
 
@@ -91,6 +92,10 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-weight: 400;
+
+  @include mobile {
+    -webkit-text-size-adjust: 100%;
+  }
 }
 
 a {

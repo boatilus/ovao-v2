@@ -1,3 +1,7 @@
+<script lang="ts">
+  import marked from 'marked'
+</script>
+
 <blockquote>
   <h3 class="prepend">
     <svg
@@ -21,6 +25,8 @@
 </blockquote>
 
 <style lang="scss">
+  @import './src/_core';
+
   blockquote {
     --line-height: 20px;
     --note--font-size: 16px;
@@ -30,11 +36,18 @@
     font-size: var(--note--font-size);
     line-height: calc(var(--note--font-size) * var(--line-height-ratio));
     margin: 2em 0;
-    padding: 1em;
+
+    @include desktop {
+      padding: 1em 1em 0.5em;
+    }
+
+    @include mobile {
+      padding: 1em 10px 0.5em 10px;
+    }
   }
 
   #note--icon {
-    margin-right: 6px;
+    margin-right: 7px;
 
     path {
       fill: var(--color-highlight);
@@ -60,11 +73,5 @@
 
   h3 {
     margin: 0;
-  }
-
-  p {
-    display: inline;
-    line-height: var(--line-height);
-    vertical-align: top;
   }
 </style>
