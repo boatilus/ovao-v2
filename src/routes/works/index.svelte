@@ -16,6 +16,7 @@
   import { expoOut } from 'svelte/easing'
   import { theme } from '$lib/stores/theme'
   import { ELLO_URL, INSTAGRAM_URL } from '$lib/variables'
+  import { header_fly_opts } from '$lib/constants'
 
   import GridImage from '$lib/components/GridImage.svelte'
 
@@ -72,16 +73,22 @@
 </svelte:head>
 
 <div id="works--container">
-  <header
-    in:flyOnce={{
-      id: 'works-header',
-      duration: 2000,
-      y: -10,
-      easing: expoOut
-    }}
-  >
-    <h1>{HEADLINE}</h1>
-    <button on:click={() => (about_modal_open = !about_modal_open)}
+  <header>
+    <h1
+      in:flyOnce={{
+        id: 'works-header',
+        ...header_fly_opts
+      }}
+    >
+      {HEADLINE}
+    </h1>
+    <button
+      in:flyOnce={{
+        id: 'works-about-button',
+        delay: 150,
+        ...header_fly_opts
+      }}
+      on:click={() => (about_modal_open = !about_modal_open)}
       >About
       <svg
         class:about-open={about_modal_open}
