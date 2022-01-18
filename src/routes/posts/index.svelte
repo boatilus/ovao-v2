@@ -31,6 +31,8 @@
 
 <script lang="ts">
   import { titler } from '$lib/util'
+  import { flyOnce } from 'svelte-transition-extras'
+  import { header_fly_opts } from '$lib/constants'
 
   export let posts: Value[]
 </script>
@@ -39,7 +41,7 @@
   <title>{titler('All Posts')}</title>
 </svelte:head>
 
-<h1>All Posts</h1>
+<h1 in:flyOnce={{ id: 'posts-index-header', ...header_fly_opts }}>All Posts</h1>
 {#each posts as { title, date, slug, synopsis }}
   <div class="post-block">
     <div class="header-block">
