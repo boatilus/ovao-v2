@@ -1,7 +1,8 @@
 ---
 title: Use Global Styling in SvelteKit Cautiously
 date: 2021-12-29
-tags: [tech, Svelte, JavaScript, UI]
+tags: [tech, Svelte, SvelteKit, JavaScript, UI]
+description: With SvelteKit's scoped-by-default component styling, use of :global can be used as an effective escape hatch. But it's not without caveats.
 ---
 
 <script>

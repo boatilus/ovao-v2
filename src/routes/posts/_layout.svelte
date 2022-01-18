@@ -5,14 +5,23 @@
   export let title
   export let date
   export let tags
+  export let description
 
-  let copyright_year = '2022'
+  let copyright_year = new Date().getFullYear()
 
   if (date) {
-    const posting_year = new Date(date).getFullYear().toString()
+    const posting_year = new Date(date).getFullYear()
     if (copyright_year !== posting_year) {
+      // @ts-ignore
       copyright_year = `${posting_year} - ${copyright_year}`
     }
+  }
+
+  // @ts-ignore
+  if (!description || description.length > 160) {
+    // We want a build warning if a post is missing a description, as we
+    // want it for the <meta> tag.
+    console.warn(`no description provided for "${title}", or > 160 chars`)
   }
 </script>
 
@@ -25,6 +34,9 @@
     rel="stylesheet"
   />
   <meta property="og:title" content={title} />
+  {#if description}
+    <meta name="description" content={description} />
+  {/if}
 </svelte:head>
 
 <header>
@@ -159,7 +171,7 @@
   article > footer {
     --title-padding: 0.5em;
 
-    border-top: 1px solid var(--color-highlight);
+    border-top: 1px solid var(--color-subdued-text);
     font-size: 16px;
     opacity: 1;
 

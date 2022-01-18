@@ -1,8 +1,8 @@
 Arguments: 
-  /opt/homebrew/Cellar/node/17.3.0/bin/node /Users/ron/.yarn/bin/yarn.js add escape.js
+  /opt/homebrew/Cellar/node/17.3.0/bin/node /Users/ron/.yarn/bin/yarn.js add --dev @types/split-word
 
 PATH: 
-  /Users/ron/.yarn/bin:/Users/ron/.config/yarn/global/node_modules/.bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+  /Users/ron/.yarn/bin:/Users/ron/.config/yarn/global/node_modules/.bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/ron/go/bin
 
 Yarn version: 
   1.22.17
@@ -14,7 +14,7 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/escape.js: Not found
+  Error: https://registry.yarnpkg.com/@types%2fsplit-word: Not found
       at Request.params.callback [as _callback] (/Users/ron/.yarn/lib/cli.js:67029:18)
       at Request.self.callback (/Users/ron/.yarn/lib/cli.js:140883:22)
       at Request.emit (node:events:390:28)
@@ -70,6 +70,7 @@ npm manifest:
   		"schema-dts": "^1.0.0",
   		"sharp": "^0.29.3",
   		"shiki": "^0.9.15",
+  		"split-word": "^1.0.1",
   		"svelte": "^3.44.0",
   		"svelte-check": "^2.2.6",
   		"svelte-preprocess": "^4.9.4",
@@ -1576,6 +1577,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
     integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
   
+  javascript-state-machine@^3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/javascript-state-machine/-/javascript-state-machine-3.1.0.tgz#06eeb2136a6a19ae1b56105c25caec283dd5cd14"
+    integrity sha512-BwhYxQ1OPenBPXC735RgfB+ZUG8H3kjsx8hrYTgWnoy6TPipEy4fiicyhT2lxRKAXq9pG7CfFT8a2HLr6Hmwxg==
+  
   js-tokens@^4.0.0:
     version "4.0.0"
     resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -2542,6 +2548,13 @@ Lockfile:
     version "1.1.5"
     resolved "https://registry.yarnpkg.com/space-separated-tokens/-/space-separated-tokens-1.1.5.tgz#85f32c3d10d9682007e917414ddc5c26d1aa6899"
     integrity sha512-q/JSVd1Lptzhf5bkYm4ob4iWPjx0KiRe3sRFBNrVqbJkFaBm5vbbowy1mymoPNLRa52+oadOhJ+K49wsSeSjTA==
+  
+  split-word@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/split-word/-/split-word-1.0.1.tgz#cc7aeece2cd33c936d95b43638f372ec84385d7f"
+    integrity sha512-Ye3wTK5XuQk6Wp33og4ULGBBn0+rJXbMGDrC25ZzxcgyP5p6vwaOQb44wvMeAYWOdX6YPXFpfALEhWSMpCumrw==
+    dependencies:
+      javascript-state-machine "^3.1.0"
   
   sprintf-js@~1.0.2:
     version "1.0.3"
