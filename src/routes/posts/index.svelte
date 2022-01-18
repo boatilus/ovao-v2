@@ -72,6 +72,7 @@
     @include large-heading;
 
     color: transparent;
+    font-weight: 500;
     -webkit-text-stroke-color: hsla(
       var(--primary-hue),
       var(--highlight-sat),

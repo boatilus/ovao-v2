@@ -72,7 +72,7 @@
         Dated: <time>{new Date(date).toLocaleDateString('en-US')}</time>
       </div>{/if}
     {#if tags}
-      <div>
+      <div id="post--footer-tags">
         Tagged: <ul class="tags">
           {#each tags.sort() as tag}
             <li>{tag}</li>
@@ -122,12 +122,20 @@
     transition: transform 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
-  header a:hover svg {
-    transform: translateX(-5px);
+  header a > svg path {
+    transition: stroke 200ms linear;
   }
 
   svg > path {
     stroke: var(--color-highlight);
+  }
+
+  header a:hover svg {
+    transform: translateX(-5px);
+  }
+
+  header a:hover path {
+    stroke: var(--color-link);
   }
 
   article {
@@ -154,6 +162,7 @@
   article h1 {
     color: var(--color-highlight);
     cursor: default;
+    font-weight: 500;
     letter-spacing: -2.4px;
     margin: 0 0 0.5em 0;
     opacity: 0.75;
@@ -187,7 +196,7 @@
   }
 
   article > footer div {
-    margin: 1em 0;
+    margin: 0.5em 0;
   }
 
   article > footer time {
@@ -195,9 +204,14 @@
     margin-left: var(--title-padding);
   }
 
+  #post--footer-tags {
+    display: inline-flex;
+  }
+
   article > footer .tags {
     list-style: none;
     display: inline-flex;
+    flex-wrap: wrap;
     gap: 0.4em;
     margin: 0 0 0 var(--title-padding);
     padding: 0;
