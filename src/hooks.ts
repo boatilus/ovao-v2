@@ -70,7 +70,8 @@ export const handle: Handle = async ({ request, resolve }) => {
     :root {
       --color-background: ${theme.background};
       --color-text: ${theme.text};
-      --color-link: ${theme.links};
+      --color-link: ${theme.link};
+      --color-highlight: ${theme.highlight};
     }
   </style>`)
 

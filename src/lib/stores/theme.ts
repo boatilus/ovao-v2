@@ -11,7 +11,8 @@ const CSS_REPRESENTATION = 'hsl'
 export interface Theme {
   background: string
   text: string
-  links: string
+  link: string
+  highlight: string
 }
 
 /**
@@ -23,10 +24,10 @@ export interface Theme {
  * @param {Theme} to - The end value.
  */
 const lerpLinear = (from: Theme, to: Theme) => {
-  let scales = new Object()
+  let scales = {}
 
   Object.keys(from).forEach((prop) => {
-    if (prop) {
+    if (from[prop] && to[prop]) {
       scales[prop] = chroma
         .scale([from[prop] || to[prop], to[prop]])
         .mode(SCALE_MODE)
@@ -39,7 +40,8 @@ const lerpLinear = (from: Theme, to: Theme) => {
         ? scales['background'](t).css(CSS_REPRESENTATION)
         : to.background,
       text: from.text ? scales['text'](t).css(CSS_REPRESENTATION) : to.text,
-      links: from.links ? scales['links'](t).css(CSS_REPRESENTATION) : to.links
+      link: from.link ? scales['link'](t).css(CSS_REPRESENTATION) : to.link,
+      highlight: from.highlight ? scales['highlight'](t).css(CSS_REPRESENTATION) : to.highlight
     }
   }
 }
@@ -49,7 +51,8 @@ export const theme = tweened<Theme>(
   {
     background: null,
     text: null,
-    links: null
+    link: null,
+    highlight: null
   },
   {
     duration: DURATION,
@@ -69,20 +72,14 @@ export const createSubscriber = (
   document: Document,
   previous_theme: Theme
 ): Subscriber<Theme> => {
-  return ({ background, text, links }) => {
+  return (theme) => {
     const root = document.documentElement
 
-    if (background && background !== previous_theme.background) {
-      root.style.setProperty('--color-background', background, 'important')
-      previous_theme.background = background
-    }
-    if (text && text !== previous_theme.text) {
-      root.style.setProperty('--color-text', text, 'important')
-      previous_theme.text = text
-    }
-    if (links && links !== previous_theme.links) {
-      root.style.setProperty('--color-link', links, 'important')
-      previous_theme.links = links
-    }
+    Object.keys(theme).forEach((prop) => {
+      if (theme[prop] && theme[prop] !== previous_theme[prop]) {
+        root.style.setProperty(`--color-${prop}`, theme[prop], 'important')
+        previous_theme[prop] = theme[prop]
+      }
+    })
   }
 }
