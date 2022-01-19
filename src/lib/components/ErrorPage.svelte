@@ -1,23 +1,15 @@
-<main>
-  <h1>Error 404</h1>
-</main>
+<script lang="ts">
+  export let status: string = '500'
+</script>
+
+<h1>Error {status}</h1>
 
 <style lang="scss">
-  :global(body) {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  main {
-    align-items: center;
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-  }
+  @import './src/_core.scss';
 
   h1 {
     cursor: default;
-    font-size: 23vw;
+    font-size: 24vw;
     letter-spacing: -0.5rem;
     margin: 0;
     overflow: hidden;
@@ -26,8 +18,12 @@
     text-rendering: geometricPrecision;
     white-space: nowrap;
 
+    @include mobile {
+      margin-top: 0.5em;
+    }
+
     @supports (-webkit-text-stroke: 2px white) {
-      -webkit-text-stroke: 2px var(--text-color);
+      -webkit-text-stroke: 2px var(--color-text);
       -webkit-text-fill-color: transparent;
     }
   }

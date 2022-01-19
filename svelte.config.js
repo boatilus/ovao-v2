@@ -46,7 +46,7 @@ const config = {
       precompress: true // FIXME: not working?
     }),
     prerender: {
-      entries: ['*', ...getResumePaths()]
+      entries: ['*', '/404.html', ...getResumePaths()]
     },
     target: 'body'
   },
