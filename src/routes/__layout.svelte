@@ -1,13 +1,18 @@
 <script lang="ts">
   import type { Theme } from '$lib/stores/theme'
   import { dev } from '$app/env'
+  import { page } from '$app/stores'
   import { started } from '$lib/stores/core'
   import { onMount } from 'svelte'
   import { theme, createSubscriber } from '$lib/stores/theme'
+  import UrlPattern from 'url-pattern'
 
   import MainMenu from '$lib/components/MainMenu.svelte'
 
   import '../app.scss'
+
+  const current_url = $page.url.pathname
+  const resume_path_pattern = new UrlPattern('/resume*')
 
   onMount(() => {
     $started = true
@@ -16,12 +21,14 @@
 
     // Normalize original values by running colors through chroma.
     const background =
-      $theme.background || computed.getPropertyValue('--background-color')
-    const text = $theme.text || computed.getPropertyValue('--text-color')
-    const links = $theme.links || computed.getPropertyValue('--link-color')
+      $theme.background || computed.getPropertyValue('--color-background')
+    const text = $theme.text || computed.getPropertyValue('--color-text')
+    const link = $theme.link || computed.getPropertyValue('--color-link')
+    const highlight =
+      $theme.highlight || computed.getPropertyValue('--color-highlight')
 
     // Track the previous theme to allow update skips.
-    const previous_theme: Theme = { background, text, links }
+    const previous_theme: Theme = { background, text, link, highlight }
 
     const subscriber = createSubscriber(document, previous_theme)
     const unsubscribe = theme.subscribe(subscriber)
@@ -101,6 +108,14 @@
     </script>
   {/if}
 </svelte:head>
+
+<noscript>
+  {#if !resume_path_pattern.match(current_url)}
+    <div id="noscript-banner">
+      <strong>NOTE:</strong> Some functionality on this site may require JavaScript
+    </div>
+  {/if}
+</noscript>
 
 <main>
   <slot />

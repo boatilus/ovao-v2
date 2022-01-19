@@ -163,7 +163,7 @@
     color: var(--color-highlight);
     cursor: default;
     font-weight: 500;
-    letter-spacing: -2.4px;
+    letter-spacing: -0.04em;
     margin: 0 0 0.5em 0;
     opacity: 0.75;
 

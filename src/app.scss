@@ -79,6 +79,10 @@
   .screen-only {
     display: none;
   }
+
+  #noscript-banner {
+    display: none;
+  }
 }
 
 html,
@@ -123,6 +127,16 @@ select {
 
 button {
   cursor: pointer;
+}
+
+#noscript-banner {
+  background-color: hsl(0, 49%, 51%);
+  color: white;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100vw;
+  padding: 0.7em 0;
 }
 
 /* -------------------------------------------------------------------
