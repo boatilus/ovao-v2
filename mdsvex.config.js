@@ -1,6 +1,5 @@
 import fetch from 'node-fetch'
 import urls from 'rehype-urls'
-import addClasses from 'rehype-add-classes'
 
 /**
  * Checks for any broken links via a HEAD request in production. A warning
@@ -53,15 +52,7 @@ const config = {
   },
   remarkPlugins: [],
   rehypePlugins: [
-    [urls, checkLinks],
-    [
-      addClasses,
-      {
-        p: 'rehype--p',
-        a: 'rehype--a',
-        code: 'rehype--code'
-      }
-    ]
+    [urls, checkLinks]
   ]
 }
 
