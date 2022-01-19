@@ -220,6 +220,16 @@
 
 <svelte:window on:sveltekit:navigation-end={close} on:click={onWindowClick} />
 
+<noscript>
+  <style>
+    #mainmenu--overlay,
+    #mainmenu--gradient,
+    #mainmenu--container {
+      display: none;
+    }
+  </style>
+</noscript>
+
 <div bind:this={overlay} id="mainmenu--overlay" />
 <div
   bind:this={gradient}
