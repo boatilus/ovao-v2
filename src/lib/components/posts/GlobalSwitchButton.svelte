@@ -21,7 +21,7 @@
   a {
     background: var(--color-highlight);
     border-radius: 3px;
-    color: var(--color-link);
+    color: var(--color-background);
     display: inline-block;
     padding: 0.4em 1em;
     text-decoration: none;
