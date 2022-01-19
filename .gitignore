@@ -3,13 +3,11 @@
 /.svelte-kit
 /package
 /__internal
-<<<<<<< HEAD
 /static/_orgs
-=======
->>>>>>> 2a82d6c0d5126568d55d0fbf38c3f3283249c365
 .DS_Store
 node_modules
 .env
 .env.*
 !.env.example
 .vercel
+.log
