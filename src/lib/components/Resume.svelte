@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { GITHUB_URL } from '$lib/variables'
+
   export let title = 'Business Analyst'
 
   export let skills = [
@@ -197,6 +199,48 @@
       <h3><strong>Languages</strong></h3>
       <p>C++17/20, Golang, Python, SQL, JavaScript / TypeScript, HTML, CSS</p>
     </div>
+  </section>
+
+  <section id="open_source" class="block">
+    <h1>Open Source Work</h1>
+    <ul>
+      <li>
+        <strong><a href="{GITHUB_URL}/slid" rel="external">slid</a></strong> - Simple,
+        12-byte lexicographically-sortable identifiers in Go
+      </li>
+      <li>
+        <strong><a href="{GITHUB_URL}/fox" rel="external">fox</a></strong> - A simple
+        Go client for the Twilio fax API
+      </li>
+      <li>
+        <strong>
+          <a href="{GITHUB_URL}/svelte-transition-extras" rel="external"
+            >svelte-transition-extras</a
+          ></strong
+        > - Finer-grained execution over Svelte's built-in transitions
+      </li>
+      <li>
+        <strong>
+          <a href="{GITHUB_URL}/svelte-preprocess-escape" rel="external"
+            >svelte-preprocess-escape</a
+          ></strong
+        > - A Svelte preprocessor that allows rendering Svelte code within components
+      </li>
+      <li>
+        <strong>
+          <a href="{GITHUB_URL}/iron-utility" rel="external">iron-utility</a
+          ></strong
+        > - A small grab bag of C++ type-oriented utilities
+      </li>
+      <li class="contributor">
+        <strong>
+          <a
+            href="https://github.com/supabase-community/postgrest-go"
+            rel="external">postgrest-go</a
+          ></strong
+        > - Isomorphic Go client for PostgREST
+      </li>
+    </ul>
   </section>
 
   <section id="education" class="block">
@@ -456,6 +500,27 @@
       h3 {
         margin: -0.4em 0;
       }
+    }
+  }
+
+  #open_source {
+    ul {
+      margin: 0;
+      padding: 0 1em;
+    }
+
+    .contributor::after {
+      --color: hsl(var(--primary-hue), 15%, 44%);
+
+      border: 1px solid var(--color);
+      border-radius: 200px;
+      content: 'Contributor';
+      color: var(--color);
+      font-size: small;
+      margin-left: 0.8em;
+      letter-spacing: 0.06em;
+      padding: 0.2em 0.65em;
+      text-transform: uppercase;
     }
   }
 </style>
