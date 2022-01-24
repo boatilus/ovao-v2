@@ -19,14 +19,22 @@
   let summary_element: HTMLDivElement
 
   onMount(() => {
+    const h1_gradient = h1_element.querySelectorAll('rect')
+    const h2_gradient = h2_element.querySelectorAll('rect')
+
     if ($started) {
       h1_element.style.opacity = '1'
       h2_element.style.opacity = '1'
+
+      if (h1_gradient.length !== 0) {
+        h1_gradient[0].style.opacity = '0'
+      }
+      if (h2_gradient.length !== 0) {
+        h2_gradient[0].style.opacity = '0'
+      }
+
       summary_element.style.opacity = '1'
     } else {
-      const h1_gradient = h1_element.querySelectorAll('rect')
-      const h2_gradient = h2_element.querySelectorAll('rect')
-
       if (h1_gradient && h2_gradient) {
         anime({
           targets: [h1_element, h2_element, summary_element],
@@ -45,7 +53,7 @@
           targets: [h1_gradient, h2_gradient],
           translateX: [0, 800],
           delay: anime.stagger(200),
-          duration: 2200,
+          duration: 1800,
           easing: Easings.OutCubic
         })
       }
@@ -60,11 +68,15 @@
     <style>
       #h1,
       #h2 {
-        opacity: 0 !important;
+        opacity: 1 !important;
       }
 
       #index--summary {
         opacity: 1 !important;
+      }
+
+      svg rect {
+        opacity: 0 !important;
       }
     </style>
   </noscript>
@@ -83,8 +95,8 @@
   >
     <defs>
       <linearGradient id="gradient" x1="30%" y1="100%" x2="0%" y2="100%">
-        <stop offset="0%" />
-        <stop stop-opacity="0" offset="100%" />
+        <stop stop-color="red" offset="0%" />
+        <stop stop-color="red" stop-opacity="0" offset="100%" />
       </linearGradient>
     </defs>
     <title>Hi.</title>
@@ -216,12 +228,8 @@
     #h2 {
       opacity: 0;
 
-      rect {
-        opacity: 0;
-      }
-
       stop {
-        stop-color: var(--background-color);
+        stop-color: var(--color-background);
       }
     }
 
