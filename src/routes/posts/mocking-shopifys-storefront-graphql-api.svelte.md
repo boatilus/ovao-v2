@@ -1,6 +1,6 @@
 ---
 title: Mocking Shopify's Storefront GraphQL API
-date: 2022-01-30
+date: 2022-02-02
 tags: [tech, Shopify, GraphQL, JavaScript, mocking, Node.js]
 description: With no solid local development story for Shopify headless e-commerce, mocking the Storefront API in your JavaScript app is the way to enlightenment.
 ---
@@ -29,7 +29,9 @@ Suppose your interface consists of a `shopify.ts` file, which instantiates a `gr
     `https://${process.env.SHOPIFY_DOMAIN}/api/2022-01/graphql.json`,
     {
       headers: {
-        'X-Shopify-Access-Token': process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN
+        'X-Shopify-Storefront-Access-Token':
+          process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+        'Content-Type': 'application/json'
       }
     }
   )
@@ -41,16 +43,19 @@ Suppose your interface consists of a `shopify.ts` file, which instantiates a `gr
 
   export const all = async (limit: number) => {
     return client.request(gql`
-      products(first: ${limit}) {
-        edges {
-          node {
-            id
-            handle
-            productType
-            // ..and probably handful of other fields
+      {
+        products(first: ${limit}) {
+          edges {
+            node {
+              id
+              handle
+              productType
+              # ..and probably some other fields
+            }
           }
         }
-      }`)
+      }
+    `)
   }
 
   // ..and probably more functions for dealing with product queries

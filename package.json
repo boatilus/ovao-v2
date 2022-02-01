@@ -32,6 +32,7 @@
 		"magic-string": "^0.25.7",
 		"mdsvex": "^0.9.8",
 		"node-fetch": "^3.1.0",
+		"postmark": "^2.8.1",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.4.0",
 		"rehype-urls": "^1.1.1",

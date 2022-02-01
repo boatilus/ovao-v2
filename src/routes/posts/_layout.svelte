@@ -2,8 +2,8 @@
   import { fly } from 'svelte/transition'
   import { titler } from '$lib/util'
 
-  import Captcha, { solved } from '$lib/components/Captcha.svelte'
-  import ContactForm from '$lib/components/ContactForm.svelte'
+  // import Captcha, { solved } from '$lib/components/Captcha.svelte'
+  // import ContactForm from '$lib/components/ContactForm.svelte'
 
   export let title
   export let date
@@ -74,19 +74,12 @@
   <slot />
 
   <div id="post--contact">
-    {#if !contact_toggled || $solved === 'false' || $solved === null}
-      <div id="post--contact-block">
-        Questions? Have feedback? <span
-          on:click={() => {
-            contact_toggled = true
-            show_captcha = true
-          }}>Click here</span
-        > to reach out.
-      </div>
-    {/if}
-    {#if $solved === 'true' && contact_toggled}
-      <ContactForm />
-    {/if}
+    <div id="post--contact-block">
+      Questions? Have feedback? Feel free to <a
+        href="mailto:ron@ovao.dev?subject={`Comment on "${title}"`}"
+        >reach out</a
+      >.
+    </div>
   </div>
 
   <footer>
@@ -109,8 +102,6 @@
     </div>
   </footer>
 </article>
-
-<Captcha bind:show={show_captcha} />
 
 <style lang="scss">
   @import './src/_core';
