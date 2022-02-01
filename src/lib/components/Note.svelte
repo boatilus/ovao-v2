@@ -1,7 +1,3 @@
-<script lang="ts">
-  import marked from 'marked'
-</script>
-
 <blockquote>
   <h3 class="prepend">
     <svg
