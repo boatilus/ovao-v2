@@ -68,6 +68,16 @@
 
   .post-block {
     margin-bottom: 3em;
+
+    @include mobile {
+      border-bottom: 1px solid var(--color-subdued);
+      margin-bottom: 1.5em;
+      padding-bottom: 1.5em;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
   }
 
   h1 {
