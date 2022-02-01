@@ -301,6 +301,8 @@
   }
 
   main {
+    font-family: var(--font-system);
+
     @include desktop {
       margin: 2em auto;
       max-width: 800px;
