@@ -2,10 +2,17 @@
   import { fly } from 'svelte/transition'
   import { titler } from '$lib/util'
 
+  // import Captcha, { solved } from '$lib/components/Captcha.svelte'
+  // import ContactForm from '$lib/components/ContactForm.svelte'
+
   export let title
   export let date
   export let tags
   export let description
+
+  /** Whether the user's clicked the "contact me" option. */
+  let contact_toggled = false
+  let show_captcha = false
 
   let copyright_year = new Date().getFullYear()
 
@@ -65,6 +72,15 @@
 <article id="post--article">
   <h1>{title}</h1>
   <slot />
+
+  <div id="post--contact">
+    <div id="post--contact-block">
+      Questions? Have feedback? Feel free to <a
+        href="mailto:ron@ovao.dev?subject={`Comment on "${title}"`}"
+        >reach out</a
+      >.
+    </div>
+  </div>
 
   <footer>
     {#if date}
@@ -235,5 +251,47 @@
   article > footer .copyright small {
     color: var(--color-subdued-text);
     font-size: 14px;
+  }
+
+  #post--contact {
+    display: flex;
+    margin-top: 3.5em;
+    width: 100%;
+
+    @include desktop {
+      justify-content: center;
+    }
+  }
+
+  #post--contact span {
+    color: white;
+    cursor: pointer;
+  }
+
+  #post--contact-block {
+    box-sizing: border-box;
+    color: var(--color-highlight);
+
+    @include desktop {
+      border: 1px solid
+        hsla(
+          var(--primary-hue),
+          var(--highlight-sat),
+          var(--highlight-lum),
+          0.3
+        );
+      border-radius: var(--border-radius-standard);
+      font-size: 20px;
+      padding: 0.75em 2em;
+    }
+
+    @include mobile {
+      background: var(--color-background-dark);
+      font-size: 16px;
+      margin: 0 var(--horz-margin);
+      padding: var(--horz-margin);
+      text-align: left;
+      width: 100%;
+    }
   }
 </style>

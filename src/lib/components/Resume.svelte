@@ -91,7 +91,7 @@
           <strong>Manager of Operations, California</strong>
         </p>
       </div>
-      <div class="date-range">7/2018 - 10/2021</div>
+      <div class="date-range">7/2018 - 11/2021</div>
     </div>
 
     <p>
@@ -301,6 +301,8 @@
   }
 
   main {
+    font-family: var(--font-system);
+
     @include desktop {
       margin: 2em auto;
       max-width: 800px;
