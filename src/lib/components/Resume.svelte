@@ -259,7 +259,7 @@
     </p>
     <p>
       <strong>Applied Data Science with Python</strong><br />
-      University of Michigan (anticipated completion: 1/2022)
+      University of Michigan (anticipated completion: 2/2022)
     </p>
 
     {#if show_quickbooks_cert}
