@@ -2,6 +2,8 @@
   import type { Load } from '@sveltejs/kit'
   import UrlPattern from 'url-pattern'
 
+  import Seo from '$lib/components/Seo.svelte'
+
   export const prerender = true
 
   const pattern = new UrlPattern('/posts/:slug')
@@ -58,6 +60,24 @@
     {@html serialize(schema)}
   {/if}
 </svelte:head>
+
+{#if schema}
+  <Seo
+    title={schema.headline.toString()}
+    description={schema.description.toString()}
+    openGraph={{
+      type: 'article',
+      url: schema.mainEntityOfPage['@id'].toString(),
+      article: {
+        publishedTime: schema.datePublished.toString(),
+        tags: schema.keywords
+          ?.toString()
+          .split(',')
+          .map((keyword) => keyword.trim())
+      }
+    }}
+  />
+{/if}
 
 <div id="posts--container">
   <slot />

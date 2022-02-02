@@ -1,6 +1,5 @@
 <script>
   import { fly } from 'svelte/transition'
-  import { titler } from '$lib/util'
 
   // import Captcha, { solved } from '$lib/components/Captcha.svelte'
   // import ContactForm from '$lib/components/ContactForm.svelte'
@@ -33,17 +32,10 @@
 </script>
 
 <svelte:head>
-  {#if title}
-    <title>{titler(title)}</title>
-  {/if}
   <link
     href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
     rel="stylesheet"
   />
-  <meta property="og:title" content={title} />
-  {#if description}
-    <meta name="description" content={description} />
-  {/if}
 </svelte:head>
 
 <header>
