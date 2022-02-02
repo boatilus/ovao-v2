@@ -5,7 +5,7 @@
 <script lang="ts">
   import { Easings } from '$lib/util/anime'
   import { started } from '$lib/stores/core'
-  import { TITLE } from '$lib/variables'
+  import { DOMAIN, TITLE } from '$lib/variables'
   import anime from 'animejs'
   import { onMount } from 'svelte'
   import { theme } from '$lib/stores/theme'
@@ -63,6 +63,12 @@
 
 <svelte:head>
   <title>{TITLE}</title>
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content={TITLE} />
+  <meta property="og:url" content="https://{DOMAIN}" />
+  <meta property="og:image" content="https://{DOMAIN}/images/selfie@3x.jpg" />
+  <meta property="profile:first_name" content="Ron" />
+  <meta property="profile:last_name" content="Jones" />
 
   <noscript>
     <style>
