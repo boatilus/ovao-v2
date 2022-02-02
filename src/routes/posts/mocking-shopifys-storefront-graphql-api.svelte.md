@@ -2,7 +2,7 @@
 title: Mocking Shopify's Storefront GraphQL API
 date: 2022-02-02
 tags: [tech, Shopify, GraphQL, JavaScript, mocking, Node.js]
-description: With no solid local development story for Shopify headless e-commerce, mocking the Storefront API in your JavaScript app is the way to enlightenment.
+description: With no solid local development story for Shopify headless e-commerce, mocking the Storefront API in your JavaScript app is the way to seamless development.
 ---
 
 <script>
