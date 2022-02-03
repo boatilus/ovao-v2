@@ -125,9 +125,9 @@
         average by designing email campaigns with custom templates.
       </li>
       <li>
-        Elevated overall employee competency with SQL for CRM data analytics and
-        reporting, improving data-driven policy decisions, by hosting beginner-
-        and intermediate-level workshops.
+        Elevated overall employee competency regarding SQL for CRM data
+        analytics and reporting by hosting beginner- and intermediate-level
+        workshops, improving data-driven policy decisions.
       </li>
       <li>
         Decreased extraneous construction material and labor costs by 14% by
@@ -159,7 +159,7 @@
 
     <ul>
       <li>
-        Supported 360% revenue growth by creating adaptable, scalable
+        Enabled 360% revenue growth by creating adaptable, scalable
         administrative practices.
       </li>
       <li>
