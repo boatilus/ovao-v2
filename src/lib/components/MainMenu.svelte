@@ -27,8 +27,18 @@
 
   $: transparent = ''
 
+  /** Whether navigation is ready to be interacted with. */
   let ready = false
+
   let open = false
+
+  /**
+   * Whether the menu's been opened at least once; used to toggle visibility
+   * of button label.
+   */
+  let opened = false
+
+  /** Whether the menu is currently in a state of animating open or close. */
   let animating = false
 
   let container: HTMLElement
@@ -142,6 +152,16 @@
   const toggle = async () => {
     if (ready && !open) {
       open = !open
+
+      if (!opened) {
+        /**
+         * The user's opened the menu once, so we can make the label
+         * invisible.
+         */
+        button.style.color = 'transparent'
+      }
+
+      opened = true
       disableScroll.on()
       overlay.style.display = 'block'
       gradient.style.display = 'block'
@@ -379,6 +399,8 @@
 </div>
 
 <style lang="scss">
+  @import './src/_core';
+
   #mainmenu--overlay {
     background-color: var(--color-background);
     display: none;
@@ -418,10 +440,12 @@
     }
 
     button {
+      animation: 700ms var(--ease-out-cubic) 500ms 1 slide-in,
+        700ms linear 500ms 1 fade-in;
+      animation-fill-mode: forwards;
       align-items: center;
       background: transparent;
       border: 0;
-      color: transparent;
       cursor: pointer;
       display: flex;
       font-size: 12px;
@@ -429,17 +453,46 @@
       height: 42px;
       letter-spacing: 3px;
       margin: 0;
+      opacity: 0;
       padding: 0;
       text-transform: uppercase;
       transition: color 250ms, opacity 250ms;
 
-      &:hover {
-        color: white;
-      }
-
       &:disabled {
         opacity: 0.5;
         cursor: default;
+      }
+
+      @include desktop {
+        color: white;
+
+        &:hover {
+          color: white !important;
+        }
+      }
+
+      @include mobile {
+        color: transparent;
+      }
+
+      @keyframes slide-in {
+        from {
+          transform: translateX(7px);
+        }
+
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
       }
 
       svg * {
