@@ -243,14 +243,6 @@
     </ul>
   </section>
 
-  <section id="education" class="block">
-    <h1>Education</h1>
-    <p>
-      <strong>High School Diploma</strong><br />
-      Dacula High School, Dacula, GA
-    </p>
-  </section>
-
   <section id="training" class="block">
     <h1>Professional Training & Certifications</h1>
     <p>
