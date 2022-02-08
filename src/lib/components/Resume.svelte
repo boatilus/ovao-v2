@@ -149,9 +149,10 @@
     </div>
 
     <p>
-      Balanced priorities between payables, receivables, financial reporting,
-      budgeting, forecasting, payroll, tax filing, and regulatory compliance.
-      Oversaw overall accounting practices and implementation. Instituted custom
+      Oversaw overall accounting practices and implementation, balancing
+      priorities between payables, receivables, financial reporting, budgeting,
+      forecasting, payroll, tax filing, and regulatory compliance. Oversaw
+      overall accounting practices and implementation. Instituted custom
       voicemail and call routing solution to replace legacy hosted PBX system.
       Drove regulatory alignment by establishing and enforcing HACCP food safety
       compliance program.
@@ -186,10 +187,11 @@
       <p>Windows, macOS, Linux, CI/CD platforms.</p>
       <h3><strong>Tools</strong></h3>
       <p>
-        JIRA, Acumatica, Git, Node.js, Go web applications, REST APIs, React /
-        React Native, SQL Server Management Studio, container-based PaaS, Adobe
-        Photoshop & Illustrator, Sketch, Pixelmator Pro, QuickBooks Online /
-        Desktop inc. payroll), Square Payments, Twilio, Compeat RMS.
+        JIRA, Acumatica, Tableau, Microsoft SQL Server Management Studio,
+        Microsoft Office 365, Git, Node.js, Go web applications, REST APIs,
+        React / React Native, container-based PaaS, Adobe Photoshop &
+        Illustrator, Sketch, Pixelmator Pro, QuickBooks Online / Desktop (inc.
+        payroll), Square Payments, Twilio, Compeat RMS.
       </p>
       <h3><strong>Databases</strong></h3>
       <p>
@@ -197,7 +199,10 @@
         (MongoDB, RethinkDB), and key-value stores (Redis, LMDB, BoltDB).
       </p>
       <h3><strong>Languages</strong></h3>
-      <p>C++17/20, Golang, Python, SQL, JavaScript / TypeScript, HTML, CSS</p>
+      <p>
+        C++17/20, Golang, Python, SQL, GraphQL, JavaScript / TypeScript, HTML,
+        CSS
+      </p>
     </div>
   </section>
 
@@ -246,12 +251,12 @@
   <section id="training" class="block">
     <h1>Professional Training & Certifications</h1>
     <p>
-      <strong>Google Data Analytics Professional Certificate</strong><br />
+      <strong>Google Data Analytics Professional Certification</strong><br />
       Google (anticipated completion: 3/2022)
     </p>
     <p>
-      <strong>Applied Data Science with Python</strong><br />
-      University of Michigan (anticipated completion: 2/2022)
+      <strong>IBM Data Analyst Professional Certification</strong><br />
+      IBM (anticipated completion: 2/2022)
     </p>
 
     {#if show_quickbooks_cert}
