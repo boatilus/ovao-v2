@@ -8,7 +8,7 @@ export const get: RequestHandler = async () => {
     'Content-Type': 'application/xml'
   }
 
-  const paths = ['', '/resume', '/works']
+  const paths = ['', '/resume', '/works', '/posts']
 
   const posts = await getPosts()
   for (const { slug } of posts) {
