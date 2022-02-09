@@ -95,7 +95,27 @@
   }
 }
 
-pre.shiki code {
+pre {
+  background: var(--color-background-code);
+  margin: 1.5em 0;
+
+  @include desktop {
+    --horz-padding: 15px;
+
+    border-radius: var(--border-radius-standard);
+    padding: calc(var(--horz-padding) / 1.5) var(--horz-padding);
+  }
+
+  @include mobile {
+    --horz-padding: var(--horz-margin);
+
+    overflow: scroll;
+    padding: var(--horz-padding);
+  }
+}
+
+pre.shiki code,
+pre code {
   font-family: 'Fira Code', monospace;
   font-size: var(--font-size-mono);
 }
