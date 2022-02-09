@@ -45,7 +45,7 @@
 {#each posts as { title, date, slug, synopsis }}
   <div class="post-block">
     <div class="header-block">
-      <h2><a href="/posts/{slug}" rel="prefetch">{title}</a></h2>
+      <h2><a href="/posts/{slug}" sveltekit:prefetch>{title}</a></h2>
       <time datetime={date}
         >{new Date(Date.parse(date)).toLocaleDateString('en-US')}</time
       >
