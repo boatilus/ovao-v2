@@ -150,6 +150,10 @@ button {
   cursor: pointer;
 }
 
+::selection {
+  background-color: var(--color-highlight);
+}
+
 #noscript-banner {
   background-color: hsl(0, 49%, 51%);
   color: white;
