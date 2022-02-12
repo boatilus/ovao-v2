@@ -22,3 +22,51 @@ export const shuffle = <T>(array: T[]) => {
     ;[array[i], array[j]] = [array[j], array[i]]
   }
 }
+
+/*!
+ * Copyright 2015 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/**
+ * Shims `window.requestIdleCallback` for unsupported browsers (*cough* Safari).
+ *
+ * @see https://developers.google.com/web/updates/2015/08/using-requestidlecallback
+ */
+export const fillRequestIdleCallback = (window: Window) => {
+  if (typeof window === 'undefined' || window === null) {
+    return
+  }
+
+  // @ts-ignore
+  window.requestIdleCallback =
+    window.requestIdleCallback ||
+    function (cb) {
+      var start = Date.now()
+      return setTimeout(function () {
+        cb({
+          didTimeout: false,
+          timeRemaining: function () {
+            return Math.max(0, 50 - (Date.now() - start))
+          }
+        })
+      }, 1)
+    }
+
+  window.cancelIdleCallback =
+    window.cancelIdleCallback ||
+    function (id) {
+      clearTimeout(id)
+    }
+}
