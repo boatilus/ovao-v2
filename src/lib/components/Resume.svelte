@@ -251,6 +251,11 @@
   <section id="training" class="block">
     <h1>Professional Training & Certifications</h1>
     <p>
+      <strong>Google Analytics Individual Qualification</strong><br />
+      Google (expires: 2/2023)
+    </p>
+
+    <p>
       <strong>Google Data Analytics Professional Certification</strong><br />
       Google (anticipated completion: 3/2022)
     </p>
