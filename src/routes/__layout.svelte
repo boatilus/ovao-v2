@@ -3,10 +3,10 @@
   import { dev } from '$app/env'
   import { page } from '$app/stores'
   import { GOOGLE_MEASUREMENT_ID } from '$lib/variables'
-  import { started } from '$lib/stores/core'
   import { fillRequestIdleCallback } from '$lib/util'
-  import { onMount } from 'svelte'
+  import { started } from '$lib/stores/core'
   import { theme, createSubscriber } from '$lib/stores/theme'
+  import { onMount } from 'svelte'
   import UrlPattern from 'url-pattern'
 
   import MainMenu from '$lib/components/MainMenu.svelte'
@@ -38,7 +38,9 @@
     const head = document.getElementsByTagName('head')[0]
     if (!head) {
       // This should never happen, but for completeness.
-      return
+      return () => {
+        unsubscribe()
+      }
     }
 
     // Load fonts via link tag injection to prevent grotesque delays.
@@ -55,24 +57,26 @@
 
     head.appendChild(stylesheet)
 
-    fillRequestIdleCallback(window)
+    if (!dev) {
+      fillRequestIdleCallback(window)
 
-    window.requestIdleCallback(
-      () => {
-        // Inject GA4.
-        let script_1 = document.createElement('script')
-        script_1.async = true
-        script_1.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_MEASUREMENT_ID}`
+      window.requestIdleCallback(
+        () => {
+          // Inject GA4.
+          let script_1 = document.createElement('script')
+          script_1.async = true
+          script_1.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_MEASUREMENT_ID}`
 
-        head.appendChild(script_1)
+          head.appendChild(script_1)
 
-        let script_2 = document.createElement('script')
-        script_2.innerHTML = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GOOGLE_MEASUREMENT_ID}')`
+          let script_2 = document.createElement('script')
+          script_2.innerHTML = `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GOOGLE_MEASUREMENT_ID}')`
 
-        head.appendChild(script_2)
-      },
-      { timeout: 1500 }
-    )
+          head.appendChild(script_2)
+        },
+        { timeout: 1500 }
+      )
+    }
 
     return () => {
       unsubscribe()
