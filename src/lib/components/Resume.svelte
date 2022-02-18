@@ -237,6 +237,11 @@
           ></strong
         > - A small grab bag of C++ type-oriented utilities
       </li>
+      <li>
+        <strong>
+          <a href="{GITHUB_URL}/storefront-go" rel="external">storefront-go</a>
+        </strong> - An experimental Shopify Storefront API client in Go
+      </li>
       <li class="contributor">
         <strong>
           <a
