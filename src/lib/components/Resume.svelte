@@ -261,12 +261,13 @@
     </p>
 
     <p>
-      <strong>Google Data Analytics Professional Certification</strong><br />
-      Google (anticipated completion: 3/2022)
-    </p>
-    <p>
       <strong>IBM Data Analyst Professional Certification</strong><br />
       IBM (anticipated completion: 2/2022)
+    </p>
+
+    <p>
+      <strong>Salesforce Administrator Certification</strong><br />
+      Salesforce (anticipated completion: 3/2022)
     </p>
 
     {#if show_quickbooks_cert}
