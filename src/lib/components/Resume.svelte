@@ -256,13 +256,29 @@
   <section id="training" class="block">
     <h1>Professional Training & Certifications</h1>
     <p>
-      <strong>Google Analytics Individual Qualification</strong><br />
-      Google (expires: 2/2023)
+      <strong>
+        <a
+          href="https://www.credly.com/badges/e4d77ce7-7781-4c6f-afc0-0af1d020bc42"
+          rel="external"
+        >
+          IBM Data Analyst Professional Certification</a
+        >
+      </strong>
+      <br />
+      IBM (issued: 3/2022)
     </p>
 
     <p>
-      <strong>IBM Data Analyst Professional Certification</strong><br />
-      IBM (anticipated completion: 2/2022)
+      <strong>
+        <a
+          href="https://skillshop.exceedlms.com/student/award/podz45AiuxwqYjncscADSWRw"
+          rel="external"
+        >
+          Google Analytics Individual Qualification
+        </a>
+      </strong>
+      <br />
+      Google (expires: 2/2023)
     </p>
 
     <p>
