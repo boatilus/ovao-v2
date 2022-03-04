@@ -2,7 +2,8 @@
 title: On-Demand Static Regeneration in Next.js
 date: 2022-03-05
 tags: [tech, code, Next.js, JavaScript, TypeScript, React]
-description: Next.js' new on-demand incremental static regeneration support further bridges the gap between static- and server-side rendering.
+description: Next.js' new on-demand incremental static regeneration support further bridges the gap between static and server-side rendering.
+seo_image: images/posts/og-on-demand-static-regeneration-in-nextjs.png
 ---
 
 <script>
