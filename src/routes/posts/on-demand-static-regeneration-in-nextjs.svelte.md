@@ -1,8 +1,8 @@
 ---
 title: On-Demand Static Regeneration in Next.js
 date: 2022-03-05
-tags: [tech, code, Next.js, JavaScript, JAMstack, React]
-description: Next.js' filesystem-based routing makes structuring your app simple and automatic, but there are useful options available for more complex routing scenarios.
+tags: [tech, code, Next.js, JavaScript, TypeScript, React]
+description: Next.js' new on-demand incremental static regeneration support further bridges the gap between static- and server-side rendering.
 ---
 
 <script>
