@@ -1,18 +1,11 @@
 <script lang="ts" context="module">
-  const enum Lang {
-    JSX = 'jsx',
-    Svelte = 'svelte',
-    TS = 'ts',
-    TypeScript = 'typescript'
-  }
-
   const COPY_BUTTON_LABEL = 'Copy snippet to clipboard'
 </script>
 
 <script lang="ts">
   import { onMount } from 'svelte'
 
-  export let lang: Lang
+  export let lang: string
   export let filename: string
   export let disable_copy = false
 
@@ -91,7 +84,7 @@
           />
         </svg>
       {/if}
-      {#if lang === Lang.JSX}
+      {#if lang === 'jsx' || lang === 'tsx'}
         <svg
           class="jsx-icon"
           width="21px"
