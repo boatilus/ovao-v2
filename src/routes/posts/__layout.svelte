@@ -67,6 +67,11 @@
     description={schema.description.toString()}
     openGraph={{
       type: 'article',
+      images: [
+        {
+          url: schema.image
+        }
+      ],
       url: schema.mainEntityOfPage['@id'].toString(),
       article: {
         publishedTime: schema.datePublished.toString(),

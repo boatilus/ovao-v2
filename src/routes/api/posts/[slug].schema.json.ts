@@ -10,7 +10,13 @@ import { wordCount } from 'split-word'
 
 export const get: RequestHandler = async ({ params }) => {
   const { slug } = params
-  const filepath = path.join(base, 'src', 'routes', 'posts', `${slug}.svelte.md`)
+  const filepath = path.join(
+    base,
+    'src',
+    'routes',
+    'posts',
+    `${slug}.svelte.md`
+  )
 
   try {
     const file = await readFile(filepath, 'utf-8')
@@ -20,8 +26,8 @@ export const get: RequestHandler = async ({ params }) => {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": `https://${DOMAIN}/posts/${slug}`
+        '@type': 'WebPage',
+        '@id': `https://${DOMAIN}/posts/${slug}`
       },
       headline: data?.title,
       author: person,
@@ -31,6 +37,10 @@ export const get: RequestHandler = async ({ params }) => {
       keywords: data?.tags.map((tag: string) => tag.toLowerCase()).join(', '),
       wordCount: wordCount(content)
       // articleBody: content -- TODO: We're not quite ready to run through the AST to deal with this.
+    }
+
+    if (data?.seo_image) {
+      schema.image = `https://${DOMAIN}/${data.seo_image}`
     }
 
     return {

@@ -88,7 +88,9 @@
 
     {#if openGraph.images && openGraph.images.length}
       {#each openGraph.images as image}
-        <meta property="og:image" content={image.url} />
+        {#if image.url}
+          <meta property="og:image" content={image.url} />
+        {/if}
         {#if image.alt}
           <meta property="og:image:alt" content={image.alt} />
         {/if}
@@ -103,17 +105,18 @@
   {/if}
 
   {#if twitter}
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={twitter?.title || title} />
+
+    {#if twitter.image}
+      <meta name="twitter:image" content={twitter.image} />
+    {/if}
 
     <meta
       name="twitter:description"
       content={twitter?.description || description}
     />
 
-    <meta name="twitter:card" content={twitter.card || 'summary_large_image'} />
-    {#if twitter.site}
-      <meta name="twitter:site" content={twitter.site} />
-    {/if}
     {#if twitter.image}
       <meta name="twitter:image" content={twitter.image} />
     {/if}
