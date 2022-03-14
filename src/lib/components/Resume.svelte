@@ -29,7 +29,7 @@
     </div>
     <hr class="mobile" />
     <div id="top-right-container">
-      Los Angeles, CA<br />
+      Atlanta, GA<br />
       <div id="top-links">
         <a href="mailto:ron@ovao.dev">ron@ovao.dev</a>
         <span>&bullet;</span>

@@ -197,7 +197,7 @@
   </svg>
   <div bind:this={summary_element} id="index--summary">
     <p>
-      I'm a developer, technologist and business analyst in Los Angeles. I'm on <a
+      I'm a developer, technologist and business analyst in Atlanta. I'm on <a
         href="https://github.com/boatilus"
         rel="external">GitHub</a
       >, and <a href="/posts" sveltekit:prefetch>I blog occasionally</a>. I also
