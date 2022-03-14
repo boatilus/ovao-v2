@@ -23,6 +23,7 @@
 
   <meta name="description" content={description} />
   <meta name="robots" content={robots} />
+  <meta name="author" content="Ron Jones" />
   <meta name="googlebot" content={robots} />
 
   {#if canonical}
