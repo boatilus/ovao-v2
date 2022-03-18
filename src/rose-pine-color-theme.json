@@ -463,7 +463,7 @@
     {
       "scope": ["comment"],
       "settings": {
-        "foreground": "#555169"
+        "foreground": "#757088"
       }
     },
     {
@@ -580,7 +580,7 @@
     {
       "scope": ["punctuation.definition.tag"],
       "settings": {
-        "foreground": "#555169"
+        "foreground": "#67627c"
       }
     },
     {
