@@ -1,7 +1,7 @@
 <script lang="ts">
   import { GITHUB_URL } from '$lib/variables'
 
-  export let title = 'Business Analyst'
+  export let title = 'Full Stack Developer'
 
   export let skills = [
     'Collecting & Documenting Requirements',
@@ -18,7 +18,7 @@
     'Policies & Procedures'
   ]
 
-  export let show_quickbooks_cert = true
+  export let show_quickbooks_cert = false
 </script>
 
 <main>
@@ -64,11 +64,12 @@
     <p>
       Analytical, solutions-focused professional offering technology and project
       management expertise with proven success in collaboratively resolving
-      challenges for diverse small- and mid-sized businesses through automation.
-      History of innovating bespoke software integration solutions to drive
-      process improvement and operational excellence. Unique blend of financial
-      acumen, programming and design proficiency, and relationship-building
-      skills leveraged to harness opportunities and mitigate risks.
+      challenges for diverse small- and mid-sized businesses through automation
+      and code. History of innovating bespoke software integration solutions to
+      drive process improvement and operational excellence. Unique blend of
+      financial acumen, programming and design proficiency, and
+      relationship-building skills leveraged to harness opportunities and
+      mitigate risks.
     </p>
   </section>
 
@@ -256,6 +257,12 @@
   <section id="training" class="block">
     <h1>Professional Training & Certifications</h1>
     <p>
+      <strong>AWS Certified Cloud Practitioner</strong>
+      <br />
+      Amazon Web Services (issued: 4/2022)
+    </p>
+
+    <p>
       <strong>
         <a
           href="https://www.credly.com/badges/e4d77ce7-7781-4c6f-afc0-0af1d020bc42"
@@ -283,7 +290,7 @@
 
     <p>
       <strong>Salesforce Administrator Certification</strong><br />
-      Salesforce (anticipated completion: 3/2022)
+      Salesforce (anticipated completion: 4/2022)
     </p>
 
     {#if show_quickbooks_cert}
