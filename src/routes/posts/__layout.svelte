@@ -4,8 +4,6 @@
 
   import Seo from '$lib/components/Seo.svelte'
 
-  export const prerender = true
-
   const pattern = new UrlPattern('/posts/:slug')
 
   export const load: Load = async ({ url, fetch }) => {

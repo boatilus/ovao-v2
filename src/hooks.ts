@@ -38,8 +38,8 @@ const minification_options = {
   removeEmptyElements: true
 }
 
-export const handle: Handle = async ({ request, resolve }) => {
-  const response = await resolve(request)
+export const handle: Handle = async ({ event, resolve }) => {
+  const response = await resolve(event)
 
   if (
     !prerendering ||
@@ -53,7 +53,7 @@ export const handle: Handle = async ({ request, resolve }) => {
   let theme: Theme
 
   for (const prop in patterns) {
-    if (patterns[prop].match(request.url.pathname)) {
+    if (patterns[prop].match(event.url.pathname)) {
       theme = themes[prop]
       break
     }
@@ -77,10 +77,7 @@ export const handle: Handle = async ({ request, resolve }) => {
 
   const body = $.html()
 
-  console.log(`mininfying prerendered request at ${request.url.pathname}..`)
+  console.log(`mininfying prerendered request at ${event.url.pathname}..`)
 
-  return {
-    ...response,
-    body: minify(body, minification_options)
-  }
+  return new Response(minify(body, minification_options), response)
 }

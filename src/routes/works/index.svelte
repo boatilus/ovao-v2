@@ -1,6 +1,4 @@
 <script lang="ts" context="module">
-  export const prerender = true
-
   const HEADLINE = 'Various Works'
 
   const MAX_HEIGHT = 385

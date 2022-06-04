@@ -8,8 +8,6 @@
     }
   }
 
-  export const prerender = true
-
   export const load: Load = async ({ fetch }): Promise<LoadResponse> => {
     const url = `/posts.json`
     const res = await fetch(url)

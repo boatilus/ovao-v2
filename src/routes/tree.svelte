@@ -1,8 +1,6 @@
 <script lang="ts" context="module">
   import URLPattern from 'url-pattern'
 
-  export const prerender = true
-
   const url_pattern = new URLPattern(
     '(http(s)\\://)(:subdomain.):domain.:tld(\\::port)(/*)'
   )

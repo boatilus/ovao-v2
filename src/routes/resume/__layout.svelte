@@ -1,8 +1,6 @@
 <script lang="ts" context="module">
   import { person } from '$lib/util/schema'
   import { serialize } from '$lib/util/schema'
-
-  export const prerender = true
 </script>
 
 <script lang="ts">
