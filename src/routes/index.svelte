@@ -1,7 +1,3 @@
-<script lang="ts" context="module">
-  export const prerender = true
-</script>
-
 <script lang="ts">
   import { Easings } from '$lib/util/anime'
   import { started } from '$lib/stores/core'

@@ -46,13 +46,8 @@ const config = {
       precompress: true // FIXME: not working?
     }),
     prerender: {
+      default: true,
       entries: ['*', '/404.html', ...getResumePaths()]
-    },
-    target: 'body'
-  },
-  vite: {
-    define: {
-      'process.env': process.env
     }
   }
 }

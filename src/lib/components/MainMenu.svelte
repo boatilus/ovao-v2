@@ -22,10 +22,15 @@
   import anime from 'animejs'
   import chroma from 'chroma-js'
   import { onMount } from 'svelte'
+  import { beforeNavigate } from '$app/navigation'
   import disableScroll from 'disable-scroll'
   import hotkeys from 'hotkeys-js'
 
   $: transparent = ''
+
+  beforeNavigate(() => {
+    close()
+  })
 
   /** Whether navigation is ready to be interacted with. */
   let ready = false
