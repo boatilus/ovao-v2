@@ -43,7 +43,7 @@ const config = {
     adapter: adapter({
       edge: false,
       external: [],
-      split: true
+      split: false
     }),
     prerender: {
       default: true,
