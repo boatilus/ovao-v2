@@ -40,7 +40,7 @@ const config = {
     mdsvex(mdsvex_config)
   ]),
   kit: {
-    adapter: vercel({
+    adapter: adapter({
       edge: true,
       external: [],
       split: true
