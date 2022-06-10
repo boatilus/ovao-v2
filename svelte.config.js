@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs'
 import { mdsvex } from 'mdsvex'
 import mdsvex_config from './mdsvex.config.js'
-import adapter from '@sveltejs/adapter-static'
+import adapter from '@sveltejs/adapter-vercel'
 import sequential from 'svelte-sequential-preprocessor'
 import preprocess from 'svelte-preprocess'
 import escape from './escape.js'
@@ -40,10 +40,10 @@ const config = {
     mdsvex(mdsvex_config)
   ]),
   kit: {
-    adapter: adapter({
-      pages: '.output',
-      assets: '.output',
-      precompress: true // FIXME: not working?
+    adapter: vercel({
+      edge: true,
+      external: [],
+      split: true
     }),
     prerender: {
       default: true,
