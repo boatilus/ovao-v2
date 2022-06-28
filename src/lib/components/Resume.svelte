@@ -84,6 +84,44 @@
 
   <section id="professional_experience" class="block">
     <h1>Professional Experience</h1>
+
+    <div class="header">
+      <div>
+        <p>
+          <strong>Mindful (Virtual Hold Technology Solutions, LLC.)</strong>
+          <span class="city">Remote</span><br />
+          <strong>Full Stack Developer</strong>
+        </p>
+      </div>
+      <div class="date-range">4/2022 - current</div>
+    </div>
+
+    <p>
+      Architected, developed, and deployed high-availability serverless AWS
+      applications using AWS Cloud Developer Kit and TypeScript. Converted
+      existing legacy Serverless framework applications to CDK, leveraging
+      advanced infrastructure-as-code practices to improve deploy-time
+      consistency and type safety. Implemented Virtual Private Cloud and
+      interface endpoints to deliver FedRAMP-compliant services.
+    </p>
+
+    <ul>
+      <li>
+        Developed common libraries and services to enable teams to quickly
+        migrate services to modern CDK paradigms.
+      </li>
+      <li>
+        Delivered DBT-backed data model processing application via AWS Fargate
+        and EC2, utilizing responsive, cost-minimizing on-demand pipelines.
+      </li>
+      <li>
+        Integrated Terraform automation to support deployment of IAM roles, role
+        groups, and services via Atlantis, enabling rapid iteration of core
+        deployment service groups, reducing DevOps friction.
+      </li>
+    </ul>
+    <br />
+
     <div class="header">
       <div>
         <p>
