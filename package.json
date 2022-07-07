@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "env-cmd svelte-kit dev",
-		"build": "svelte-kit build",
+		"build": "vite build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
@@ -53,6 +53,7 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.4.3",
 		"url-pattern": "^1.0.3",
+		"vite": "^2.9.13",
 		"xml2js": "^0.4.23"
 	},
 	"type": "module",
