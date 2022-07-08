@@ -261,11 +261,10 @@
     display: flex;
     flex-wrap: wrap;
     line-height: 0;
-    justify-content: space-between;
 
     @include desktop {
       padding-bottom: 5em;
-      row-gap: var(--row-gap);
+      gap: var(--row-gap);
     }
 
     @include mobile {
