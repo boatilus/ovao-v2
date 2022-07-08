@@ -112,7 +112,7 @@
       </li>
       <li>
         Delivered DBT-backed data model processing application via AWS Fargate
-        and EC2, utilizing responsive, cost-minimizing on-demand pipelines.
+        and ECS, utilizing responsive, cost-minimizing on-demand pipelines.
       </li>
       <li>
         Integrated Terraform automation to support deployment of IAM roles, role
