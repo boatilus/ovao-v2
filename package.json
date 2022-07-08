@@ -2,7 +2,7 @@
 	"name": "ovao-v2",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "env-cmd svelte-kit dev",
+		"dev": "env-cmd vite dev",
 		"build": "vite build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
