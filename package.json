@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "env-cmd svelte-kit dev",
-		"build": "svelte-kit build",
+		"build": "vite build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
@@ -14,7 +14,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-static": "1.0.0-next.34",
 		"@sveltejs/adapter-vercel": "^1.0.0-next.58",
-		"@sveltejs/kit": "1.0.0-next.348",
+		"@sveltejs/kit": "1.0.0-next.360",
 		"@types/animejs": "^3.1.4",
 		"@types/chroma-js": "^2.1.3",
 		"@types/estree": "^0.0.51",
@@ -53,6 +53,7 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.4.3",
 		"url-pattern": "^1.0.3",
+		"vite": "^2.9.13",
 		"xml2js": "^0.4.23"
 	},
 	"type": "module",

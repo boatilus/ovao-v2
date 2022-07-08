@@ -10,6 +10,8 @@
     jpg?: ImageTypeData
   }
 
+  const separator = '~'
+
   export let name: string
   export let base: ImageVariant
   export let two_x: ImageVariant
@@ -26,16 +28,16 @@
   <source
     type="image/webp"
     srcset="
-    /images/works/{name}+{three_x.webp.hash}@3x.webp 3x,
-    /images/works/{name}+{two_x.webp.hash}@2x.webp 2x,
-    /images/works/{name}+{base.webp.hash}.webp"
+    /images/works/{name}{separator}{three_x.webp.hash}@3x.webp 3x,
+    /images/works/{name}{separator}{two_x.webp.hash}@2x.webp 2x,
+    /images/works/{name}{separator}{base.webp.hash}.webp"
   />
   <source
     type="image/jpeg"
     srcset="
-    /images/works/{name}+{three_x.jpg.hash}@3x.jpg 3x,
-    /images/works/{name}+{two_x.jpg.hash}@2x.jpg 2x,
-    /images/works/{name}+{base.jpg.hash}.jpg"
+    /images/works/{name}{separator}{three_x.jpg.hash}@3x.jpg 3x,
+    /images/works/{name}{separator}{two_x.jpg.hash}@2x.jpg 2x,
+    /images/works/{name}{separator}{base.jpg.hash}.jpg"
   />
   <img
     height={row_height}
