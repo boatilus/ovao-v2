@@ -272,6 +272,13 @@
       </li>
       <li>
         <strong>
+          <a href="{GITHUB_URL}/cloudformation-resources"
+            >cloudformation-resources</a
+          >
+        </strong> - Typed resource qualifiers for AWS CloudFormation
+      </li>
+      <li>
+        <strong>
           <a href="{GITHUB_URL}/iron-utility" rel="external">iron-utility</a
           ></strong
         > - A small grab bag of C++ type-oriented utilities
