@@ -111,8 +111,9 @@
         migrate services to modern CDK paradigms.
       </li>
       <li>
-        Delivered DBT-backed data model processing application via AWS Fargate
-        and ECS, utilizing responsive, cost-minimizing on-demand pipelines.
+        Delivered FedRAMP Moderate-compliant DBT-backed data model processing
+        application via AWS Fargate, Elastic Container Registry and AWS Lambda,
+        utilizing responsive, cost-minimizing on-demand pipelines.
       </li>
       <li>
         Integrated Terraform automation to support deployment of IAM roles, role
