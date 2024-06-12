@@ -13,7 +13,7 @@
   import { flyOnce } from 'svelte-transition-extras'
   import { expoOut } from 'svelte/easing'
   import { theme } from '$lib/stores/theme'
-  import { ELLO_URL, INSTAGRAM_URL } from '$lib/variables'
+  import { INSTAGRAM_URL } from '$lib/variables'
   import { header_fly_opts } from '$lib/constants'
 
   import GridImage from '$lib/components/GridImage.svelte'
@@ -128,8 +128,7 @@
           of 2017, and oriented more strongly towards the essential in 2018.
         </p>
         <p>
-          Most of these are posted to <a href={ELLO_URL} rel="external">Ello</a
-          >, and in modified forms to
+          Most of these are posted in modified form to
           <a href={INSTAGRAM_URL} rel="external">Instagram</a>.
         </p>
       </div>

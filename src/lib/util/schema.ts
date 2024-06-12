@@ -1,5 +1,5 @@
 import type { Person, Thing, WithContext } from 'schema-dts'
-import { DOMAIN, LINKEDIN_URL, GITHUB_URL, ELLO_URL } from '$lib/variables'
+import { DOMAIN, LINKEDIN_URL, GITHUB_URL } from '$lib/variables'
 
 export type Schema = Thing | WithContext<Thing>
 
@@ -19,7 +19,7 @@ export const person: WithContext<Person> = {
     addressRegion: 'CA',
     addressCountry: 'US'
   },
-  sameAs: [LINKEDIN_URL, GITHUB_URL, ELLO_URL]
+  sameAs: [LINKEDIN_URL, GITHUB_URL]
 }
 
 /**

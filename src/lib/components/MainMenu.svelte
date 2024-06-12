@@ -11,12 +11,7 @@
 </script>
 
 <script lang="ts">
-  import {
-    GITHUB_URL,
-    ELLO_URL,
-    INSTAGRAM_URL,
-    LINKEDIN_URL
-  } from '$lib/variables'
+  import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL } from '$lib/variables'
   import { page } from '$app/stores'
   import { theme } from '$lib/stores/theme'
   import anime from 'animejs'
@@ -340,20 +335,6 @@
         />
       </svg> GitHub</a
     >
-    <a href={ELLO_URL} rel="external"
-      ><svg
-        width="28px"
-        height="28px"
-        viewBox="0 0 28 28"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <path
-          d="M14,0 C21.7317187,0 28,6.26800781 28,14 C28,21.7319375 21.7317187,28 14,28 C6.26784375,28 0,21.7319375 0,14 C0,6.26800781 6.26784375,0 14,0 Z M21.5503203,15.1251953 C21.1214609,15.0140156 20.6862031,15.2724687 20.5759531,15.7003984 C19.8016328,18.7029609 17.0972266,20.8003906 14,20.8003906 C10.9022812,20.8003906 8.19836719,18.7029609 7.42360938,15.7003984 C7.31330469,15.2724687 6.87760938,15.0145078 6.44924219,15.1251953 C6.02175,15.2355547 5.76428125,15.6721797 5.87453125,16.0996719 C6.831125,19.8095078 10.1726953,22.4000547 14,22.4000547 C17.8273594,22.4000547 21.1683828,19.8095078 22.1249766,16.0996719 C22.2357187,15.6721797 21.97825,15.2355547 21.5503203,15.1251953 Z"
-        />
-      </svg>Ello</a
-    >
     <a href={INSTAGRAM_URL} rel="external"
       ><svg
         width="28px"
@@ -445,7 +426,8 @@
     }
 
     button {
-      animation: 700ms var(--ease-out-cubic) 500ms 1 slide-in,
+      animation:
+        700ms var(--ease-out-cubic) 500ms 1 slide-in,
         700ms linear 500ms 1 fade-in;
       animation-fill-mode: forwards;
       align-items: center;
@@ -461,7 +443,9 @@
       opacity: 0;
       padding: 0;
       text-transform: uppercase;
-      transition: color 250ms, opacity 250ms;
+      transition:
+        color 250ms,
+        opacity 250ms;
 
       &:disabled {
         opacity: 0.5;
