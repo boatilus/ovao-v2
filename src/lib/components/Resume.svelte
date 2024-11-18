@@ -1,16 +1,16 @@
 <script lang="ts">
   import { GITHUB_URL } from '$lib/variables'
 
-  export let title = 'Full Stack Developer'
+  export let title = 'Senior Full Stack Developer'
 
   export let skills = [
     'Collecting & Documenting Requirements',
     'Project Management',
-    'Building Workflow Diagrams',
+    'Architecture Design',
     'Iterative Process Improvement',
     'Maintaining Scope & Schedule',
     'Validating Business Needs',
-    'Managing Vendor Relationships',
+    'Event-Driven Application Design',
     'Increasing Productivity & Competency',
     'Converting & Ingesting Data',
     'Cross-Functional Collaboration',
@@ -67,7 +67,7 @@
       challenges for diverse small- and mid-sized businesses through automation
       and code. History of innovating bespoke software integration solutions to
       drive process improvement and operational excellence. Unique blend of
-      financial acumen, programming and design proficiency, and
+      financial acumen, programming, and design proficiency, and
       relationship-building skills leveraged to harness opportunities and
       mitigate risks.
     </p>
@@ -88,9 +88,9 @@
     <div class="header">
       <div>
         <p>
-          <strong>Mindful (Virtual Hold Technology Solutions, LLC.)</strong>
+          <strong>Mindful (Medallia Inc.)</strong>
           <span class="city">Remote</span><br />
-          <strong>Full Stack Developer</strong>
+          <strong>Senior Software Engineer</strong>
         </p>
       </div>
       <div class="date-range">4/2022 - current</div>
@@ -98,21 +98,26 @@
 
     <p>
       Architected, developed, and deployed high-availability serverless AWS
-      applications using AWS Cloud Developer Kit and TypeScript. Converted
-      existing legacy Serverless framework applications to CDK, leveraging
-      advanced infrastructure-as-code practices to improve deploy-time
-      consistency and type safety. Implemented Virtual Private Cloud and
-      interface endpoints to deliver FedRAMP-compliant services.
+      applications using AWS Cloud Developer Kit, Terraform, and TypeScript.
+      Converted existing legacy Serverless framework applications to CDK,
+      leveraging advanced infrastructure-as-code practices to improve
+      deploy-time consistency and type safety. Implemented Virtual Private Cloud
+      and interface endpoints to deliver FedRAMP-compliant services.
     </p>
 
     <ul>
       <li>
-        Developed common libraries and services to enable teams to quickly
-        migrate services to modern CDK paradigms.
+        Led development of Mindful Webhooks, delivering real-time events to
+        clients via AWS EventBridge, DynamoDB and AWS Lambda with &gt;90% test
+        coverage.
       </li>
       <li>
         Delivered DBT-backed data model processing application via AWS Fargate
         and ECS, utilizing responsive, cost-minimizing on-demand pipelines.
+      </li>
+      <li>
+        Developed common libraries and services to enable teams to quickly
+        migrate services to modern CDK paradigms.
       </li>
       <li>
         Integrated Terraform automation to support deployment of IAM roles, role
@@ -226,21 +231,21 @@
       <p>Windows, macOS, Linux, CI/CD platforms.</p>
       <h3><strong>Tools</strong></h3>
       <p>
-        JIRA, Acumatica, Tableau, Microsoft SQL Server Management Studio,
-        Microsoft Office 365, Git, Node.js, Go web applications, REST APIs,
-        React / React Native, container-based PaaS, Adobe Photoshop &
-        Illustrator, Sketch, Pixelmator Pro, QuickBooks Online / Desktop (inc.
-        payroll), Square Payments, Twilio, Compeat RMS.
+        JIRA, Pacifica, Acumatica, Tableau, Microsoft SQL Server Management
+        Studio, Microsoft Office 365, Git, Node.js, Go web applications, REST
+        APIs, React / React Native, container-based PaaS, Adobe Photoshop &
+        Illustrator, Sketch, Pixelmator Pro, Stripe, Square Payments, Twilio.
       </p>
       <h3><strong>Databases</strong></h3>
       <p>
         SQL databases (PostgreSQL, MySQL, Microsoft SQL Server), NoSQL stores
-        (MongoDB, RethinkDB), and key-value stores (Redis, LMDB, BoltDB).
+        (MongoDB, RethinkDB), time series databases (Timestream) and key-value
+        stores (DynamoDB, Redis, LMDB, BoltDB).
       </p>
       <h3><strong>Languages</strong></h3>
       <p>
-        C++17/20, Golang, Python, SQL, GraphQL, JavaScript / TypeScript, HTML,
-        CSS
+        Golang, JavaScript / TypeScript, C++20/23, Python, Rust, Terraform, SQL,
+        GraphQL, HTML, CSS
       </p>
     </div>
   </section>
@@ -302,7 +307,12 @@
   <section id="training" class="block">
     <h1>Professional Training & Certifications</h1>
     <p>
-      <strong>AWS Certified Cloud Practitioner</strong>
+      <strong
+        ><a
+          href="https://www.credly.com/badges/a13dd4d0-befb-4752-b00d-75013cba3c0e"
+          rel="external">AWS Certified Cloud Practitioner</a
+        ></strong
+      >
       <br />
       Amazon Web Services (issued: 4/2022)
     </p>
