@@ -343,11 +343,6 @@
       Google (expires: 2/2023)
     </p>
 
-    <p>
-      <strong>Salesforce Administrator Certification</strong><br />
-      Salesforce (anticipated completion: 4/2022)
-    </p>
-
     {#if show_quickbooks_cert}
       <p>
         <strong>QuickBooks Online Advanced ProAdvisor Certification</strong><br
