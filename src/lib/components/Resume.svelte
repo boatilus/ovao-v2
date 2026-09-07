@@ -1,7 +1,7 @@
 <script lang="ts">
   import { GITHUB_URL } from '$lib/variables'
 
-  export let title = 'Senior Full Stack Developer'
+  export let title = 'Staff Software Engineer'
 
   export let skills = [
     'Collecting & Documenting Requirements',
@@ -9,7 +9,7 @@
     'Architecture Design',
     'Iterative Process Improvement',
     'Maintaining Scope & Schedule',
-    'Validating Business Needs',
+    'Agent Skill Development',
     'Event-Driven Application Design',
     'Increasing Productivity & Competency',
     'Converting & Ingesting Data',
@@ -90,7 +90,7 @@
         <p>
           <strong>Mindful (Medallia Inc.)</strong>
           <span class="city">Remote</span><br />
-          <strong>Senior Software Engineer</strong>
+          <strong>Staff Software Engineer</strong>
         </p>
       </div>
       <div class="date-range">4/2022 - current</div>
@@ -101,11 +101,16 @@
       applications using AWS Cloud Developer Kit, Terraform, and TypeScript.
       Converted existing legacy Serverless framework applications to CDK,
       leveraging advanced infrastructure-as-code practices to improve
-      deploy-time consistency and type safety. Implemented Virtual Private Cloud
-      and interface endpoints to deliver FedRAMP-compliant services.
+      deploy-time consistency and static type safety. Implemented Virtual
+      Private Cloud and interface endpoints to deliver FedRAMP-compliant
+      services.
     </p>
 
     <ul>
+      <li>
+        Led design and development of client-configurable data retention
+        policies, leverging event-driven architecture to maintain customer data
+        policies across multiple services and databases.
       <li>
         Led development of Mindful Webhooks, delivering real-time events to
         clients via AWS EventBridge, DynamoDB and AWS Lambda with &gt;90% test
@@ -244,8 +249,8 @@
       </p>
       <h3><strong>Languages</strong></h3>
       <p>
-        Golang, JavaScript / TypeScript, C++20/23, Python, Rust, Terraform, SQL,
-        GraphQL, HTML, CSS
+        Golang, JavaScript / TypeScript, C++20/23, Python, Rust, Ruby,
+        Terraform, SQL, GraphQL, HTML, CSS
       </p>
     </div>
   </section>
@@ -328,19 +333,6 @@
       </strong>
       <br />
       IBM (issued: 3/2022)
-    </p>
-
-    <p>
-      <strong>
-        <a
-          href="https://skillshop.exceedlms.com/student/award/podz45AiuxwqYjncscADSWRw"
-          rel="external"
-        >
-          Google Analytics Individual Qualification
-        </a>
-      </strong>
-      <br />
-      Google (expires: 2/2023)
     </p>
 
     {#if show_quickbooks_cert}
