@@ -155,7 +155,7 @@
   </section>
 
   <footer>
-    <small>Copyright &copy; Ron Jones 2022. All rights reserved.</small>
+    <small>Copyright &copy; Ron Jones 2022 - 2026. All rights reserved.</small>
   </footer>
 </div>
 
