@@ -26,6 +26,7 @@
 		"chroma-js": "^2.1.2",
 		"command-line-args": "^5.2.0",
 		"dedent": "^0.7.0",
+		"env-cmd": "^11.0.0",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",
